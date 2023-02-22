@@ -18,7 +18,7 @@
 }
 
 .main-home2{
-    background-color: rgb(233, 148, 176);
+    background-image:urlb(233, 148, 176);
     border:0px solid black;
     height: auto;
     width: 100%;
@@ -43,7 +43,7 @@
 }
 
 .main-home3{
-    background-color: rgb(250, 245, 245);
+    background-image:urlb(250, 245, 245);
 }
 
 .home3{
@@ -64,4 +64,30 @@
     gap:25px;
 
 }
+
+
+.home_slider{
+    width:100%;
+    height: 500px;
+    background-image:urlb(243, 234, 234);
+    position: relative;
+    
+    animation-name: mymove;
+    animation-name: example;
+   
+    animation: example 5s infinite;
+
+   
+    animation-timing-function: ease;
+  }
+  
+  
+    @keyframes example {
+        0%   {background-image:url("https://assets.ajio.com/cms/AJIO/WEB/21022023-UHP-D-MainBanner-P3-FootwearCarnival-RedTapeFila-Flat60.jpg"); right: 0; top:0px;}
+        25%  {background-color: aliceblue; right: 100%; top:0px;}
+        50%  { background-image:url("https://assets.ajio.com/cms/AJIO/WEB/21022023-UHP-D-MainBanner-P5-GantSuperdryClarks-Min50Extra35.jpg");right:100%; top:0px;}
+        75%  { right: 100%; top:0px;}
+        100% {background-image:url("https://assets.ajio.com/cms/AJIO/WEB/D-UHP-ClearanceSale.jpg"); right: 0; top:0px;}
+      }
+  
 
