@@ -4,6 +4,7 @@ import Admin from '../Pages/Admin'
 import { Home } from '../Pages/Home'
 import ProductList from '../Pages/ProductList'
 
+
 export const AllRoutes = () => {
   return (
     <div>
