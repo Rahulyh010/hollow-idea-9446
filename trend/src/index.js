@@ -6,13 +6,16 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
+import { ProSidebarProvider } from 'react-pro-sidebar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
+    <ProSidebarProvider>
   <BrowserRouter>
   <App />
   </BrowserRouter>
+  </ProSidebarProvider>
   </Provider>
     
 
