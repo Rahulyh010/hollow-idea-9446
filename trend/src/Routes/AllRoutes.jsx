@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Admin from '../Pages/Admin'
 import { Home } from '../Pages/Home'
-import ProductList from '../Pages/ProductList'
+import ProductPage from '../Pages/ProductPage'
 
 
 export const AllRoutes = () => {
@@ -11,7 +11,7 @@ export const AllRoutes = () => {
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/admin" element={<Admin/>}/>
-            <Route path="productlist" element={<ProductList/>}/>
+            <Route path="productpage" element={<ProductPage/>}/>
         </Routes>
     </div>
   )
