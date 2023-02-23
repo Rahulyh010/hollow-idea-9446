@@ -9,6 +9,7 @@ export const Navbar = () => {
 <div>
 <Link to="/" >Home</Link>
 <Link to="/admin">Admin</Link>
+<Link to="/AdminProducts">Product Page</Link>
 
 </div>
 
