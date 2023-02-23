@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Footer } from '../Components/footer'
 import "../Styles/Home.css"
 
 export const Home = () => {
@@ -23,8 +24,9 @@ console.log(int)
   return (
     <div>
  
- <div className="home_slider">
+ <div className="home_slider1">
 {/* <img src={images[int]} alt="" /> */}
+<img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-ClearanceSale.jpg" alt="" />
  </div>
 {/* /////////////////////////////////////////// */}
  <div className="home1" >
@@ -478,7 +480,12 @@ console.log(int)
 <div className='class'>
 
 </div>
+<div className="home1" >
+    <img src="https://assets.ajio.com/cms/AJIO/WEB/D1-1440x90-11.jpg" alt="" />
+ </div>
 
+
+<Footer/>
 
     </div>
   )
