@@ -8,12 +8,11 @@ import Admin from '../Pages/Admin'
 const AdminRoutes = () => {
   return (
     <div>
-        <>
+        <Routes>
             <Route path="/Dashboard" element={<AdminDashboard/>} />
             <Route path="/AdminProducts" element={<AdminProducts/>} />
             <Route path="/AddProducts" element={<AddProducts/>} />
-            
-        </>
+         </Routes>
     </div>
   )
 }
