@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from "react-redux" 
 import { getProductData } from '../Redux/ProductReducer/action'
 import ProductCard from "./PoductCard"
-//import { getProductData } from '../Redux/productReducer/action'
+
 
 const ProductList = () => {
   const dispatch =useDispatch()
