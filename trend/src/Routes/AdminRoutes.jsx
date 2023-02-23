@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router'
 import AddProducts from '../Components/Admin/AddProducts'
 import AdminDashboard from '../Components/Admin/AdminDashboard'
 import AdminProducts from '../Components/Admin/AdminProducts'
-import Admin from '../Pages/Admin'
+
 
 const AdminRoutes = () => {
   return (
