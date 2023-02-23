@@ -8,6 +8,7 @@ function App() {
     <div className="App" style={{margin:"0px",padding:"0px"}}>
       <AllRoutes/>
       {/* <Admin/> */}
+      
     </div>
   );
 }
