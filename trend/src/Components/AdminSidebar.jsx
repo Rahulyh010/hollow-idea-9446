@@ -8,6 +8,7 @@ import { BsPerson } from 'react-icons/bs';
 import { MdOutlineDeliveryDining } from 'react-icons/md';
 import { BiRupee,BiImages,BiInfoCircle } from 'react-icons/bi';
 import Logo from "../Images/Logo.png"
+import { Link } from 'react-router-dom';
 
 
 
@@ -16,14 +17,13 @@ const AdminSidebar = () => {
   return (
     <SidebarMain>
       <div><img src={Logo} alt="" style={{width:"9rem",marginLeft:"5rem",marginTop:"1rem"}}/></div>
-      
-      <div style={{marginTop:"-10rem"}}>
-        <Sidebar  style={{width:"80%",padding:"1.5rem"}}>
+      <div>
+        <Sidebar  style={{width:"100%",marginTop:"-5rem"}}>
           <Menu>
-          <MenuItem> <AiFillHome style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/>Dashboard </MenuItem>
+          <Link style={{textDecoration:"none"}} to="/Dashboard"><MenuItem> <AiFillHome style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/>Dashboard </MenuItem></Link>
             <SubMenu  label="Products" icon={<GoPackage/>}>
-              <MenuItem> All Products </MenuItem>
-              <MenuItem> Add Products </MenuItem>
+            <Link style={{textDecoration:"none"}} to="/AdminProducts"><MenuItem> All Products </MenuItem></Link>
+              <Link style={{textDecoration:"none"}} to="/AddProducts"><MenuItem > Add Products </MenuItem></Link>
             </SubMenu>
             <MenuItem><AiOutlineShoppingCart style={{marginLeft:"0.5rem",marginRight:"1.1rem"}}/> Orders </MenuItem>
             <MenuItem><IoMdReturnLeft style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/> Return Orders </MenuItem>
@@ -53,8 +53,9 @@ const SidebarMain = styled.div`
     width: 300px;
     height: 800px;
     display: grid;
-    background: rgb(228,233,177);
-    background: linear-gradient(90deg, rgba(228,233,177,1) 10%, rgba(209,248,251,1) 58%);
+    background-color: white;
+    /* background: rgb(228,233,177);
+    background: linear-gradient(90deg, rgba(228,233,177,1) 10%, rgba(209,248,251,1) 58%); */
     margin-left:0;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     text-align: left;
