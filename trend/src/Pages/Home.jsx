@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../Styles/Home.css"
 
 export const Home = () => {
-
+const [int,setInt]=useState(0)
     let images=[
         "https://assets.ajio.com/cms/AJIO/WEB/21022023-UHP-D-MainBanner-P3-FootwearCarnival-RedTapeFila-Flat60.jpg",
         "https://assets.ajio.com/cms/AJIO/WEB/21022023-UHP-D-MainBanner-P5-GantSuperdryClarks-Min50Extra35.jpg",
         "https://assets.ajio.com/cms/AJIO/WEB/21022023-UHP-D-MainBanner-P7-ArrowUSPA-Upto50.jpg",
-        "https://assets.ajio.com/cms/AJIO/WEB/21022023-UHP-D-MainBanner-P3-FootwearCarnival-RedTapeFila-Flat60.jpg"
+        "https://assets.ajio.com/cms/AJIO/WEB/D-UHP-ClearanceSale.jpg"
     ]
 
-    let i=0;
+    const u=0;
+
+   
+    
+
+
+   
+
+console.log(int)
 
   return (
     <div>
  
  <div className="home_slider">
-<img src={images[i]} alt="" />
+{/* <img src={images[int]} alt="" /> */}
  </div>
 {/* /////////////////////////////////////////// */}
  <div className="home1" >
@@ -467,9 +475,9 @@ export const Home = () => {
 <img src="https://assets.ajio.com/cms/AJIO/WEB/13102020-D-unisex-ajiocares-strip.jpg" alt="" />
 </div>
 
+<div className='class'>
 
-
-
+</div>
 
 
     </div>
