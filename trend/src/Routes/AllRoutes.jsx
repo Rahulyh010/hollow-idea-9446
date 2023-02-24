@@ -38,13 +38,17 @@ export const AllRoutes = () => {
             
             
             
-            <Route path="/AdminProducts" element={<AdminProducts/>} />
+            {/* <Route path="/AdminProducts" element={<AdminProducts/>} /> */}
             
 
-            <Route path="/admin/*" element={<Admin/>}/>
+            {/* <Route path="/admin/*" element={<Admin/>}/>
             <Route path="/Dashboard" element={<AdminDashboard/>} />
             <Route path="/AdminProducts" element={<AdminProducts/>} />
-            <Route path="/AddProducts" element={<AddProducts/>} />
+            <Route path="/AddProducts" element={<AddProducts/>} /> */}
+           
+           
+           
+           
             <Route path="productpage" element={<ProductPage/>} />
             <Route path="productpage/id" element={<ProductDetailPage/>} />
 
