@@ -1,14 +1,14 @@
 import React from 'react'
-<<<<<<< HEAD
+// <<<<<<< HEAD
 
-const Navbar = () => {
-  return (
-    <div>Navbar</div>
-  )
-}
+// const Navbar = () => {
+//   return (
+//     <div>Navbar</div>
+//   )
+// }
 
-export default Navbar
-=======
+// export default Navbar
+// =======
 import { Link } from 'react-router-dom'
 import "../Styles/Navbar.css"
 
@@ -20,6 +20,7 @@ export const Navbar = () => {
 <Link to="/" >Home</Link>
 <Link to="/admin">Admin</Link>
 <Link to="/AdminProducts">Product Page</Link>
+<Link to="/signin">Sign In</Link>
 
 </div>
 
@@ -30,4 +31,4 @@ export const Navbar = () => {
     </div>
   )
 }
->>>>>>> main
+// >>>>>>> main
