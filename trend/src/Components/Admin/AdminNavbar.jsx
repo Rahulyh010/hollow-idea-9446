@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 
@@ -7,7 +8,7 @@ const AdminNavbar = () => {
     <AdminNav>
         <div><h3 style={{marginRight:"45rem",marginLeft:"2rem"}}>Admin Panel</h3></div>
         <div><p>Super Admin</p></div>
-        <div><img style={{width:"2rem"}} src={"https://cdn-icons-png.flaticon.com/512/1144/1144709.png"} alt="" /></div>
+        <Link to="/Login"><div><img style={{width:"2rem"}} src={"https://cdn-icons-png.flaticon.com/512/1144/1144709.png"} alt="" /></div></Link>
     </AdminNav>
   )
 }
