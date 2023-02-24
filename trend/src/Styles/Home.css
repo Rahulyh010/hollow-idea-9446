@@ -66,28 +66,14 @@
 }
 
 
-.home_slider{
+.home_slider1{
     width:100%;
     height: 500px;
     background-image:urlb(243, 234, 234);
-    position: relative;
+   
     
-    animation-name: mymove;
-    animation-name: example;
-   
-    animation: example 5s infinite;
-
-   
-    animation-timing-function: ease;
+    
   }
   
-  
-    @keyframes example {
-        0%   {background-image:url("https://assets.ajio.com/cms/AJIO/WEB/21022023-UHP-D-MainBanner-P3-FootwearCarnival-RedTapeFila-Flat60.jpg"); right: 0; top:0px;}
-        25%  {background-color: aliceblue; right: 100%; top:0px;}
-        50%  { background-image:url("https://assets.ajio.com/cms/AJIO/WEB/21022023-UHP-D-MainBanner-P5-GantSuperdryClarks-Min50Extra35.jpg");right:100%; top:0px;}
-        75%  { right: 100%; top:0px;}
-        100% {background-image:url("https://assets.ajio.com/cms/AJIO/WEB/D-UHP-ClearanceSale.jpg"); right: 0; top:0px;}
-      }
   
 

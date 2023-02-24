@@ -5,6 +5,7 @@ import AdminDashboard from '../Components/Admin/AdminDashboard'
 import AdminProducts from '../Components/Admin/AdminProducts'
 import Login from '../Components/Admin/Login'
 
+import Admin from '../Pages/Admin'
 
 const AdminRoutes = () => {
   return (
@@ -16,6 +17,8 @@ const AdminRoutes = () => {
             <Route path="/Login" element={<Login/>} />
             
         </Routes>
+          
+         
     </div>
   )
 }
