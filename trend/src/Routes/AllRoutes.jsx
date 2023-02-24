@@ -33,20 +33,6 @@ export const AllRoutes = () => {
             {/* <Route path="/productlist" element={<ProductList/>}/> */}
            <Route path='/signin' element={<LoginSignup/>}></Route>
 
-
-            
-            
-            
-            
-            {/* <Route path="/AdminProducts" element={<AdminProducts/>} /> */}
-            
-
-            {/* <Route path="/admin/*" element={<Admin/>}/>
-            <Route path="/Dashboard" element={<AdminDashboard/>} />
-            <Route path="/AdminProducts" element={<AdminProducts/>} />
-            <Route path="/AddProducts" element={<AddProducts/>} /> */}
-           
-           
            
            
             <Route path="productpage" element={<ProductPage/>} />
