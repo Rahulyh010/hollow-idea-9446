@@ -20,7 +20,7 @@ const AdminSidebar = () => {
       <div>
         <Sidebar  style={{width:"100%",marginTop:"-5rem"}}>
           <Menu>
-          <Link style={{textDecoration:"none"}} to="/Dashboard"><MenuItem> <AiFillHome style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/>Dashboard </MenuItem></Link>
+          <Link to="/Dashboard" style={{textDecoration:"none"}} ><MenuItem> <AiFillHome style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/>Dashboard </MenuItem></Link>
             <SubMenu  label="Products" icon={<GoPackage/>}>
             <Link style={{textDecoration:"none"}} to="/AdminProducts"><MenuItem> All Products </MenuItem></Link>
               <Link style={{textDecoration:"none"}} to="/AddProducts"><MenuItem > Add Products </MenuItem></Link>
