@@ -10,12 +10,12 @@ const SideBarProduct = () => {
 export default SideBarProduct
 
 const SidrBarDiv= styled.div`
-width: 350px;
+width: 300px;
 height: 800px;
 display: grid;
 background-color: white;
-margin-left:10px;
-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+border:1px solid;
+// box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 text-align: left;
 
 `

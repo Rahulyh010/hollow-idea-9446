@@ -7,9 +7,12 @@ const ProductPage = () => {
   return (
    
 
-    <div style={{display:"flex", width:"90%"}}>
+    <div style={{display:"flex", 
+                width:"85%",
+                margin:"auto",
+                gap:"7px",marginTop:"15px"}}>
       <div><SideBarProduct/></div>
-      <div><ProductList/></div>
+      <div style={{}}><ProductList/></div>
       
          
     </div>
