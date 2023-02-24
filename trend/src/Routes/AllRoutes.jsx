@@ -17,9 +17,10 @@ import { LoginSignup } from '../Pages/LoginSignup'
 import AdminProducts from '../Components/Admin/AdminProducts'
 
 //import Admin from '../Pages/Admin'
-
+import ProductPage from '../Pages/ProductPage'
 import AddProducts from '../Components/Admin/AddProducts'
 import AdminDashboard from '../Components/Admin/AdminDashboard'
+import ProductDetailPage from '../Pages/ProductDetailPage'
 //import AdminProducts from '../Components/Admin/AdminProducts'
 
 //import { Home } from '../Pages/Home'
@@ -35,7 +36,9 @@ export const AllRoutes = () => {
 
             
             
-   
+            <Route path="productpage" element={<ProductPage/>} />
+            <Route path="productpage/id" element={<ProductDetailPage/>} />
+            
             <Route path="/AdminProducts" element={<AdminProducts/>} />
             
 
