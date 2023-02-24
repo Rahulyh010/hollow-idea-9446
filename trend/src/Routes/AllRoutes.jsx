@@ -28,7 +28,7 @@ export const AllRoutes = () => {
     <div>
         <Routes>
             <Route path="/" element={<Home/>} />
-                    <Route path="/admin" element={<Admin/>}/>
+            <Route path="/admin" element={<Admin/>}/>
             {/* <Route path="/productlist" element={<ProductList/>}/> */}
            <Route path='/signin' element={<LoginSignup/>}></Route>
 
@@ -36,13 +36,13 @@ export const AllRoutes = () => {
             
             
    
-            <Route path="/AdminProducts" element={<AdminProducts/>} />
-            
+            {/* <Route path="/AdminProducts" element={<AdminProducts/>} />
+             */}
 
-            <Route path="/admin/*" element={<Admin/>}/>
+            {/* <Route path="/admin/*" element={<Admin/>}/>
             <Route path="/Dashboard" element={<AdminDashboard/>} />
             <Route path="/AdminProducts" element={<AdminProducts/>} />
-            <Route path="/AddProducts" element={<AddProducts/>} />
+            <Route path="/AddProducts" element={<AddProducts/>} /> */}
 
         </Routes>
     </div>
