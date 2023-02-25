@@ -6,12 +6,12 @@ import { Home } from '../Pages/Home'
 import { LoginSignup } from '../Pages/LoginSignup'
 
 //import ProductList from '../Pages/ProductList'
- Day4_Bhagyesh
+ 
 import ProductDetailPage from '../Pages/ProductDetailPage'
 
 import Login from '../Components/Admin/Login'
 import { useSelector } from 'react-redux'
- main
+
 //import AdminProducts from '../Components/Admin/AdminProducts'
 
 
@@ -30,8 +30,7 @@ import AdminDashboard from '../Components/Admin/AdminDashboard'
 
 //import { Home } from '../Pages/Home'
 export const AllRoutes = () => {
-  const selector = useSelector();
-  const auth = useSe
+  
 
   return (
     <div>
@@ -52,7 +51,7 @@ export const AllRoutes = () => {
             <Route path="/Dashboard" element={<AdminDashboard/>} />
             <Route path="/AdminProducts" element={<AdminProducts/>} />
             <Route path="/AddProducts" element={<AddProducts/>} /> */}
-            Day4_Bhagyesh
+          
             <Route path="productpage" element={<ProductPage/>} />
             <Route path="productpage/id" element={<ProductDetailPage/>} />
             

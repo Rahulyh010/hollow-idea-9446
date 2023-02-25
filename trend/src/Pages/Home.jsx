@@ -24,7 +24,7 @@ console.log(int)
   return (
     <div>
  
- <div className="home_slider1">
+ <div className="home_slider">
 {/* <img src={images[int]} alt="" /> */}
 <img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-ClearanceSale.jpg" alt="" />
  </div>
