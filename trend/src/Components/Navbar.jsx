@@ -16,17 +16,15 @@ export const Navbar = () => {
   return (
     <div className='nav-main'>
 
-<div>
-<Link to="/" >Home</Link>
-<Link to="/admin">Admin</Link>
-<Link to="/AdminProducts">Product Page</Link>
-<Link to="/signin">Sign In</Link>
+      <div>
+        <Link to="/" >Home</Link>
+        <Link to="/adminLogin">Admin</Link>
+        
+        <Link to="/signin">Sign In</Link>
 
-</div>
+      </div>
 
-<div>
 
-</div>
 
     </div>
   )

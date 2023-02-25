@@ -16,11 +16,11 @@ import { Link } from 'react-router-dom';
 const AdminSidebar = () => {
   return (
     <SidebarMain>
-      <div><img src={Logo} alt="" style={{width:"9rem",marginLeft:"5rem",marginTop:"1rem"}}/></div>
+      <Link to="/Dashboard"><div><img src={Logo} alt="" style={{width:"12rem",marginLeft:"3rem",marginTop:"2rem"}}/></div></Link>
       <div>
         <Sidebar  style={{width:"100%",marginTop:"-5rem"}}>
           <Menu>
-          <Link style={{textDecoration:"none"}} to="/Dashboard"><MenuItem> <AiFillHome style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/>Dashboard </MenuItem></Link>
+          <Link to="/Dashboard" style={{textDecoration:"none"}} ><MenuItem> <AiFillHome style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/>Dashboard </MenuItem></Link>
             <SubMenu  label="Products" icon={<GoPackage/>}>
             <Link style={{textDecoration:"none"}} to="/AdminProducts"><MenuItem> All Products </MenuItem></Link>
               <Link style={{textDecoration:"none"}} to="/AddProducts"><MenuItem > Add Products </MenuItem></Link>
@@ -60,8 +60,6 @@ const SidebarMain = styled.div`
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     text-align: left;
     margin-top:-3.5rem;
-    
-    
     
 `
 

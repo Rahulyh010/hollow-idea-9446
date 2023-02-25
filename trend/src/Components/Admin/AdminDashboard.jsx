@@ -9,7 +9,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate()
   const goToProduct = () => {
     navigate("/AdminProducts")
-    alert("working")
+    // alert("working")
   }
   return (
     <Maindiv>
@@ -76,7 +76,13 @@ const DetailsDiv = styled.div`
     padding: 1rem;
     border-radius: 1rem;
     background-color: #c0fcc0;
-  }& h2 {
+  }& div:hover {
+    cursor:pointer;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #b4fcb4;
+  }
+  & h2 {
     color: grey;
     
   }& h3 {
