@@ -9,7 +9,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate()
   const goToProduct = () => {
     navigate("/AdminProducts")
-    alert("working")
+    // alert("working")
   }
   return (
     <Maindiv>

@@ -20,6 +20,7 @@ import AdminProducts from '../Components/Admin/AdminProducts'
 
 import AddProducts from '../Components/Admin/AddProducts'
 import AdminDashboard from '../Components/Admin/AdminDashboard'
+import Login from '../Components/Admin/Login'
 //import AdminProducts from '../Components/Admin/AdminProducts'
 
 //import { Home } from '../Pages/Home'
@@ -29,8 +30,10 @@ export const AllRoutes = () => {
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/admin" element={<Admin/>}/>
+            
             {/* <Route path="/productlist" element={<ProductList/>}/> */}
            <Route path='/signin' element={<LoginSignup/>}></Route>
+           <Route path="/adminLogin" element={<Login/>}/>
 
 
             

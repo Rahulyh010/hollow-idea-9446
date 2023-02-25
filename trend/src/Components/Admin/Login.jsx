@@ -3,8 +3,11 @@ import { AiOutlineLogin } from 'react-icons/ai';
 import styled from 'styled-components';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useDispatch } from 'react-redux';
-// import { LoginProcess} from '../../Redux/AdminAuthReducer/Action';
+import { useDispatch, useSelector } from 'react-redux';
+import { LoginProcess } from '../../Redux/AdminAuthReducer/action';
+import { store } from '../../Redux/store';
+import { Navigate, useNavigate } from 'react-router';
+
 
 
 
@@ -20,10 +23,20 @@ const Login = () => {
     const [password,setPassword] = useState("")
     // console.log(email,password)
     const dispatch = useDispatch();
+    const navigate = useNavigate()
     const handleLogin = () => {
-        // let userData = {email,password};
-        // dispatch(LoginProcess(userData))
+        let userData = {email,password};
+        dispatch(LoginProcess(userData))
+        
     }
+
+    const loginData = useSelector((store)=>{
+        // {console.log(store.adminauth.isAuth,store.adminauth.token)}
+        if(store.adminauth.isAuth){
+            navigate("/Admin")
+            
+        }
+    })
 
     return (
         <MainDiv>
@@ -50,7 +63,7 @@ const Login = () => {
             </InputDiv>
             <ToastContainer
                 position="top-center"
-                autoClose={1000}
+                autoClose={7000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
@@ -74,7 +87,7 @@ const ForgetPass = styled.p`
 
 
 const InputDiv = styled.div`
-    width: 30%;
+    width: 23%;
     margin: auto;
     height: 30rem;
     background-color: #ffffff;
@@ -106,9 +119,9 @@ const InputDiv = styled.div`
 `
 
 const MainDiv = styled.div`
-    width: 90%;
+    width: 100%;
     margin: auto;
-    margin-top:2rem;
+    margin-top:0rem;
     height: 40rem;
     /* background-color: #8ff03b; */
     background-image: url("https://img.freepik.com/free-photo/shirt-mockup-concept-with-plain-clothing_23-2149448749.jpg?w=996&t=st=1677236919~exp=1677237519~hmac=0a547041f316047105d9b140f319c4d355f943062ea6a9cc452e8474b371cfa3");

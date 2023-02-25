@@ -10,15 +10,16 @@ import Admin from '../Pages/Admin'
 const AdminRoutes = () => {
   return (
     <div>
-        <Routes>
-            <Route path="/Dashboard" element={<AdminDashboard/>} />
-            <Route path="/AdminProducts" element={<AdminProducts/>} />
-            <Route path="/AddProducts" element={<AddProducts/>} />
-            <Route path="/Login" element={<Login/>} />
-            
-        </Routes>
-          
-         
+      <Routes>
+        <Route path="/" element={<AdminDashboard />} />
+        <Route path="/Dashboard" element={<AdminDashboard />} />
+        <Route path="/AdminProducts" element={<AdminProducts />} />
+        <Route path="/AddProducts" element={<AddProducts />} />
+        <Route path="/Login" element={<Login />} />
+
+      </Routes>
+
+
     </div>
   )
 }

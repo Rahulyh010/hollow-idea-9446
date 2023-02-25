@@ -15,7 +15,7 @@ export const postLoginSuccessAction = (payload) => {
 }
 
 
-export const LoginProcess =(userData) => (dispatch) => {
+export const LoginProcess = (userData) => (dispatch) => {
     console.log(userData)
     dispatch(postLoginRequestAction());
     axios.post("https://reqres.in/api/login",userData).then((res)=>{
