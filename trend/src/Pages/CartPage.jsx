@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from "styled-components"
- import "./cart.css"
+ import "./Cart.css"
 
 const CartPage = () => {
   const [cart, setCart] = useState([]);

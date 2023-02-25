@@ -22,7 +22,7 @@ const [int,setInt]=useState(0)
 console.log(int)
 
   return (
-    <div>
+    <div id="HomeMain" >
  
  <div className="home_slider">
 {/* <img src={images[int]} alt="" /> */}

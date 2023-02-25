@@ -27,6 +27,7 @@ import AdminProducts from '../Components/Admin/AdminProducts'
 import ProductPage from '../Pages/ProductPage'
 import AddProducts from '../Components/Admin/AddProducts'
 import AdminDashboard from '../Components/Admin/AdminDashboard'
+import CartPage from '../Pages/CartPage'
 
 //import { Home } from '../Pages/Home'
 export const AllRoutes = () => {
@@ -36,14 +37,14 @@ export const AllRoutes = () => {
     <div>
         <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="/admin" element={<Admin/>}/>
+            <Route path="/admin/*" element={<Admin/>}/>
             
             {/* <Route path="/productlist" element={<ProductList/>}/> */}
            <Route path='/signin' element={<LoginSignup/>}></Route>
            <Route path="/adminLogin" element={<Login/>}/>
 
 
-            
+          
             
 
 
@@ -54,8 +55,8 @@ export const AllRoutes = () => {
           
             <Route path="productpage" element={<ProductPage/>} />
             <Route path="productpage/id" element={<ProductDetailPage/>} />
-            
-            <Route path="/AdminProducts" element={<AdminProducts/>} />
+          
+            <Route path='/cartPage' element={<CartPage/>}/>
             
 
    
