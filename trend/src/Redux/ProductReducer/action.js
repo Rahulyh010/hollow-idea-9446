@@ -15,7 +15,7 @@ export const getProductData=(dispatch)=>{
     console.log("running")
   dispatch(getDataRequest)
 
-  axios.get("https://fakestoreapi.com/products")
+  axios.get("http://localhost:8080/mens-t-shirt")
   .then((res)=>{
     console.log(res)
     dispatch(getDataSuccess(res.data))
