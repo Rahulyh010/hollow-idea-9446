@@ -22,7 +22,7 @@ export const Navbar = () => {
       <div id="nav02">
 <p>Sign In/login</p>
 
-<Link to="/admin/*">
+<Link to="/adminLogin">
 <div id="admin-nav" >
 Admin
 </div>
