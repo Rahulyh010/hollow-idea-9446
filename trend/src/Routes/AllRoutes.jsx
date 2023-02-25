@@ -6,6 +6,13 @@ import { Home } from '../Pages/Home'
 import { LoginSignup } from '../Pages/LoginSignup'
 
 //import ProductList from '../Pages/ProductList'
+ Day4_Bhagyesh
+import ProductDetailPage from '../Pages/ProductDetailPage'
+
+import Login from '../Components/Admin/Login'
+import { useSelector } from 'react-redux'
+ main
+//import AdminProducts from '../Components/Admin/AdminProducts'
 
 
 
@@ -17,12 +24,9 @@ import { LoginSignup } from '../Pages/LoginSignup'
 import AdminProducts from '../Components/Admin/AdminProducts'
 
 //import Admin from '../Pages/Admin'
-
+import ProductPage from '../Pages/ProductPage'
 import AddProducts from '../Components/Admin/AddProducts'
 import AdminDashboard from '../Components/Admin/AdminDashboard'
-import Login from '../Components/Admin/Login'
-import { useSelector } from 'react-redux'
-//import AdminProducts from '../Components/Admin/AdminProducts'
 
 //import { Home } from '../Pages/Home'
 export const AllRoutes = () => {
@@ -42,14 +46,23 @@ export const AllRoutes = () => {
 
             
             
-   
-            {/* <Route path="/AdminProducts" element={<AdminProducts/>} />
-             */}
+
 
             {/* <Route path="/admin/*" element={<Admin/>}/>
             <Route path="/Dashboard" element={<AdminDashboard/>} />
             <Route path="/AdminProducts" element={<AdminProducts/>} />
             <Route path="/AddProducts" element={<AddProducts/>} /> */}
+            Day4_Bhagyesh
+            <Route path="productpage" element={<ProductPage/>} />
+            <Route path="productpage/id" element={<ProductDetailPage/>} />
+            
+            <Route path="/AdminProducts" element={<AdminProducts/>} />
+            
+
+   
+            {/* <Route path="/AdminProducts" element={<AdminProducts/>} />
+             */}
+
 
         </Routes>
     </div>
