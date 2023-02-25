@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { LoginProcess } from '../../Redux/AdminAuthReducer/action';
 import { store } from '../../Redux/store';
-import { Navigate, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 
 
 

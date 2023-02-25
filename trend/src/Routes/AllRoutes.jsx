@@ -21,10 +21,14 @@ import AdminProducts from '../Components/Admin/AdminProducts'
 import AddProducts from '../Components/Admin/AddProducts'
 import AdminDashboard from '../Components/Admin/AdminDashboard'
 import Login from '../Components/Admin/Login'
+import { useSelector } from 'react-redux'
 //import AdminProducts from '../Components/Admin/AdminProducts'
 
 //import { Home } from '../Pages/Home'
 export const AllRoutes = () => {
+  const selector = useSelector();
+  const auth = useSe
+
   return (
     <div>
         <Routes>
