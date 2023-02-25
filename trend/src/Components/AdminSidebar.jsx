@@ -16,13 +16,13 @@ import { Link } from 'react-router-dom';
 const AdminSidebar = () => {
   return (
     <SidebarMain>
-      <Link to="/Dashboard"><div><img src={Logo} alt="" style={{width:"12rem",marginLeft:"3rem",marginTop:"2rem"}}/></div></Link>
-      <div>
+      <Link to="/"><div><img src={Logo} alt="" style={{width:"12rem",marginLeft:"3rem",marginTop:"2rem"}}/></div></Link>
+      <div style={{ display: 'flex', height: 'auto',display:"block"}}>
         <Sidebar  style={{width:"100%",marginTop:"-5rem"}}>
           <Menu>
-          <Link to="/Dashboard" style={{textDecoration:"none"}} ><MenuItem> <AiFillHome style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/>Dashboard </MenuItem></Link>
+          <Link to="/" style={{textDecoration:"none"}} ><MenuItem> <AiFillHome style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/>Dashboard </MenuItem></Link>
             <SubMenu  label="Products" icon={<GoPackage/>}>
-            <Link style={{textDecoration:"none"}} to="/AdminProducts"><MenuItem> All Products </MenuItem></Link>
+            <Link style={{textDecoration:"none"}} to="/AllProducts"><MenuItem> All Products </MenuItem></Link>
               <Link style={{textDecoration:"none"}} to="/AddProducts"><MenuItem > Add Products </MenuItem></Link>
             </SubMenu>
             <MenuItem><AiOutlineShoppingCart style={{marginLeft:"0.5rem",marginRight:"1.1rem"}}/> Orders </MenuItem>
@@ -41,7 +41,7 @@ const AdminSidebar = () => {
             <MenuItem><BiImages style={{marginLeft:"0.5rem",marginRight:"1.1rem"}}/> Home Sliders </MenuItem>
             <MenuItem><BiInfoCircle style={{marginLeft:"0.5rem",marginRight:"1.1rem"}}/> About Us. </MenuItem>
           </Menu>
-        </Sidebar>;
+        </Sidebar>
       </div>
     </SidebarMain>
   )
@@ -60,6 +60,12 @@ const SidebarMain = styled.div`
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     text-align: left;
     margin-top:-3.5rem;
+
+    & a {
+      color: #3a3a3a;
+    }& a:hover{
+      color: #106d4a
+    }
     
 `
 

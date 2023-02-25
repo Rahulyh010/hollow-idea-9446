@@ -48,7 +48,7 @@ export const AllRoutes = () => {
             
 
 
-            {/* <Route path="/admin/*" element={<Admin/>}/>
+        {/* <Route path="/admin/*" element={<Admin/>}/>
             <Route path="/Dashboard" element={<AdminDashboard/>} />
             <Route path="/AdminProducts" element={<AdminProducts/>} />
             <Route path="/AddProducts" element={<AddProducts/>} /> */}
@@ -64,7 +64,7 @@ export const AllRoutes = () => {
              */}
 
 
-        </Routes>
+      </Routes>
     </div>
   )
 }
