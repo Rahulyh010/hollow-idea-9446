@@ -11,6 +11,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
   <Provider store={store}>
     <ProSidebarProvider>
       <BrowserRouter>
@@ -18,6 +19,8 @@ root.render(
       </BrowserRouter>
     </ProSidebarProvider>
   </Provider>
+  
+  
 
 
 

@@ -27,20 +27,31 @@ const Login = () => {
     const handleLogin = () => {
         let userData = {email,password};
         dispatch(LoginProcess(userData))
-        
+        successToast()
     }
 
     const loginData = useSelector((store)=>{
         // {console.log(store.adminauth.isAuth,store.adminauth.token)}
         if(store.adminauth.isAuth){
             navigate("/Admin")
-            
+            // successToast()
         }
     })
 
     return (
         <MainDiv>
-            
+            <ToastContainer
+                position="top-center"
+                autoClose={7000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover={false}
+                theme="dark"
+            />
             <br />
 
 
@@ -61,18 +72,7 @@ const Login = () => {
                 </div>
 
             </InputDiv>
-            <ToastContainer
-                position="top-center"
-                autoClose={7000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover={false}
-                theme="dark"
-            />
+            
         </MainDiv>
     )
 }
@@ -119,7 +119,7 @@ const InputDiv = styled.div`
 `
 
 const MainDiv = styled.div`
-    width: 100%;
+    width: 99.8%;
     margin: auto;
     margin-top:0rem;
     height: 40rem;

@@ -1,22 +1,53 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { useDispatch, useSelector } from 'react-redux';
+import { store } from '../../Redux/store';
+import { RiLogoutCircleLine } from 'react-icons/ri';
+import { LogoutProcess } from '../../Redux/AdminAuthReducer/action';
+
+
 
 
 const AdminNavbar = () => {
+  const navigate = useNavigate()
+  const logout = useSelector((store) => store.adminauth)
+  // console.log(logout)
+  const dispatch = useDispatch()
+  // console.log(store.adminauth.isAuth))
+  // console.log(logout)
+  const handleLogout = () => {
+    // navigate("/Login")
+    dispatch(LogoutProcess())
+    navigate("/")
+
+  }
   return (
-   
+
     <AdminNav>
-        <div><h3 style={{marginRight:"45rem",marginLeft:"2rem"}}>Admin Panel</h3></div>
-        <div><p>Super Admin</p></div>
-        <Dropdown><Logout><Link to="/Login"><div><img style={{width:"2rem"}} src={"https://cdn-icons-png.flaticon.com/512/1144/1144709.png"} alt="" /></div></Link></Logout>
-        <DropCont>
-        <p>Hello World!</p>
-        </DropCont>
-        </Dropdown>
+      <div><h3 style={{ marginRight: "45rem", marginLeft: "2rem" }}>Admin Panel</h3></div>
+      <button onClick={handleLogout}>Logout <RiLogoutCircleLine/></button>
+      
+      {/* <div><p>Super Admin</p></div>
+      <div><img style={{ width: "2rem" }} src={"https://cdn-icons-png.flaticon.com/512/1144/1144709.png"} alt="" /></div> */}
+      {/* <div>
+        <Sidebar style={{display:"block-inline"}}>
+          <Menu>
+            <SubMenu label="Admin" icon={<img style={{ width: "2rem" }} src={"https://cdn-icons-png.flaticon.com/512/1144/1144709.png"} alt="" />}>
+              <MenuItem onClick={handleLogout}> Logout </MenuItem></Link>
+            </SubMenu>
+          </Menu>
+        </Sidebar>
+      </div> */}
+      {/* <div>
+        <Select placeholder='Admin' icon={<img style={{ width: "2rem" }} src={"https://cdn-icons-png.flaticon.com/512/1144/1144709.png"} alt="" />}>
+          <option onClick={handleLogout} value='option1'>Logout</option>
+        </Select>
+      </div> */}
     </AdminNav>
-    
+
   )
 }
 
