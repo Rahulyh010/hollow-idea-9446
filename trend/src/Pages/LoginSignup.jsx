@@ -1,3 +1,4 @@
+import { ChakraProvider } from "@chakra-ui/provider";
 import { Box, Image, Heading, Text, Input, Button } from "@chakra-ui/react";
 import {
   FormControl,
@@ -15,7 +16,6 @@ import {
   updateUserAuthStatus,
 } from "../Redux/AuthReducer/action";
 // import { userExist } from '../Redux/authentication/reducer'
-// import styles from "../styles/Login.module.css";
 
 export const initialState = {
   firstName: "",
@@ -159,8 +159,8 @@ export function LoginSignup() {
     navigate("/");
   };
   const checkCredentials = () => {
-    // console.log(userExist,"userExit from localt storage");
-    // console.log(existingUserData,"existing user data");
+    console.log(userExist,"userExit from localt storage");
+    console.log(existingUserData,"existing user data");
     userExist = JSON.parse(localStorage.getItem("currentUser"));
     if (
       existingUserData.existingEmail === userExist.email &&
@@ -173,6 +173,8 @@ export function LoginSignup() {
   };
   //------------------------------------RETURN---------------------------------------------------------
   return (
+    // <ChakraProvider>
+
     <Box
       // id={styles.mainContainer}
       display="flex"
@@ -182,19 +184,21 @@ export function LoginSignup() {
       height="auto"
       margin="auto"
       marginTop="70px"
+      padding={"4%"}
       //   bg="pink.100"
     >
-      <Box w="40%">
+      <Box w="50%">
         <Image
           w="100%"
+          h={"90%"}
           // id={styles.img}
-          src=""
+          src="https://tse3.mm.bing.net/th?id=OIP.6OBmveAznkWN5AgS5NZw4AHaDt&pid=Api&P=0"
           alt="loginImage"
           borderRadius="10px 0px 0px 10px"
         />
       </Box>
 
-      <Box w="60%">
+      <Box w="50%">
         {/* ---------------------------------------------1st form conditional rendering-------------------------------------------------------------- */}
         {showForm1 && (
           <>
@@ -331,6 +335,7 @@ export function LoginSignup() {
                 mt="20px"
                 isDisabled={userData.otp !== otp}
                 bg="orange"
+                ml={"5px"}
                 onClick={addUser}
               >
                 Verify
@@ -375,5 +380,7 @@ export function LoginSignup() {
         )}
       </Box>
     </Box>
+    // </ChakraProvider>
+
   );
 }

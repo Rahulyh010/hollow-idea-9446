@@ -1,16 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { FaChartPie } from "react-icons/fa";
 import { RiHome7Fill } from "react-icons/ri";
 import Chart from './Chart';
 import { useNavigate } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProduct } from '../../Redux/AdminProductReducer/action';
 
 const AdminDashboard = () => {
+
+  const TotalNumberOfProducts = useSelector((store)=>{
+    return store.adminProduct.product.length
+  })
+  // const dispatch = useDispatch();
+  // useEffect(()=>{
+  //   dispatch(getProduct)
+  // },[TotalNumberOfProducts])
+
   const navigate = useNavigate()
   const goToProduct = () => {
-    navigate("/AdminProducts")
-    alert("working")
+    navigate("/AllProducts")
+    // alert("working")
   }
+ 
   return (
     <Maindiv>
       <h2>Dashboard <RiHome7Fill /></h2>
@@ -25,17 +37,17 @@ const AdminDashboard = () => {
             <div onClick={goToProduct}>
               <img src="https://cdn-icons-png.flaticon.com/512/2875/2875878.png" alt="" />
               <h2>Products</h2>
-              <h3>231</h3>
+              <h3>{TotalNumberOfProducts}</h3>
             </div>
             <div>
               <img src="https://cdn-icons-png.flaticon.com/512/7245/7245051.png" alt="" />
               <h2>Delivered</h2>
-              <h3>231</h3>
+              <h3>65</h3>
             </div>
             <div>
               <img src="https://cdn-icons-png.flaticon.com/512/3500/3500899.png" alt="" />
               <h2>Cancelled</h2>
-              <h3>231</h3>
+              <h3>12</h3>
             </div>
           </DetailsDiv>
           <ChartDiv style={{ width: "40%" }}>
@@ -76,7 +88,13 @@ const DetailsDiv = styled.div`
     padding: 1rem;
     border-radius: 1rem;
     background-color: #c0fcc0;
-  }& h2 {
+  }& div:hover {
+    cursor:pointer;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #b4fcb4;
+  }
+  & h2 {
     color: grey;
     
   }& h3 {

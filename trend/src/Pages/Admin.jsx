@@ -3,7 +3,7 @@ import background from "../Images/background.png"
 import styled from 'styled-components'
 import AdminNavbar from '../Components/Admin/AdminNavbar'
 import AdminSidebar from '../Components/AdminSidebar'
-import AdminDashboard from '../Components/Admin/AdminDashboard'
+// import AdminDashboard from '../Components/Admin/AdminDashboard'
 import AdminRoutes from '../Routes/AdminRoutes'
 
 const Admin = () => {
@@ -28,6 +28,7 @@ const Maindiv = styled.div`
     margin: 0%;
     width: 100%;
     padding: 0%;
+    height: auto;
     /* background-image: url(${background}); */
     
     

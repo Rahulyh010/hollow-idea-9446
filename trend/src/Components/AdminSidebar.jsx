@@ -16,13 +16,13 @@ import { Link } from 'react-router-dom';
 const AdminSidebar = () => {
   return (
     <SidebarMain>
-      <div><img src={Logo} alt="" style={{width:"9rem",marginLeft:"5rem",marginTop:"1rem"}}/></div>
-      <div>
+      <Link to="/"><div><img src={Logo} alt="" style={{width:"12rem",marginLeft:"3rem",marginTop:"2rem"}}/></div></Link>
+      <div style={{ display: 'flex', height: 'auto',marginTop:"7rem"}}>
         <Sidebar  style={{width:"100%",marginTop:"-5rem"}}>
           <Menu>
-          <Link style={{textDecoration:"none"}} to="/Dashboard"><MenuItem> <AiFillHome style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/>Dashboard </MenuItem></Link>
+          <Link to="/" style={{textDecoration:"none"}} ><MenuItem> <AiFillHome style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/>Dashboard </MenuItem></Link>
             <SubMenu  label="Products" icon={<GoPackage/>}>
-            <Link style={{textDecoration:"none"}} to="/AdminProducts"><MenuItem> All Products </MenuItem></Link>
+            <Link style={{textDecoration:"none"}} to="/AllProducts"><MenuItem> All Products </MenuItem></Link>
               <Link style={{textDecoration:"none"}} to="/AddProducts"><MenuItem > Add Products </MenuItem></Link>
             </SubMenu>
             <MenuItem><AiOutlineShoppingCart style={{marginLeft:"0.5rem",marginRight:"1.1rem"}}/> Orders </MenuItem>
@@ -41,7 +41,7 @@ const AdminSidebar = () => {
             <MenuItem><BiImages style={{marginLeft:"0.5rem",marginRight:"1.1rem"}}/> Home Sliders </MenuItem>
             <MenuItem><BiInfoCircle style={{marginLeft:"0.5rem",marginRight:"1.1rem"}}/> About Us. </MenuItem>
           </Menu>
-        </Sidebar>;
+        </Sidebar>
       </div>
     </SidebarMain>
   )
@@ -51,17 +51,22 @@ export default AdminSidebar
 
 const SidebarMain = styled.div`
     width: 300px;
-    height: 800px;
+    height: auto;
     display: grid;
-    background-color: white;
+    
+    
     /* background: rgb(228,233,177);
     background: linear-gradient(90deg, rgba(228,233,177,1) 10%, rgba(209,248,251,1) 58%); */
     margin-left:0;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     text-align: left;
     margin-top:-3.5rem;
-    
-    
+
+    & a {
+      color: #3a3a3a;
+    }& a:hover{
+      color: #106d4a
+    }
     
 `
 
