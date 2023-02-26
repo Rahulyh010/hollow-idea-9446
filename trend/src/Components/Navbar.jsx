@@ -76,7 +76,7 @@ Admin
       <div className='nav1' > 
        
       <Link href="/">
-      <img className='nav-img' width="40%" src="https://assets.ajio.com/static/img/Ajio-Logo.svg" alt="ajio" />
+      <img className='nav-img' width="60%" src={Logo} alt="ajio" />
       </Link> 
 
       </div>

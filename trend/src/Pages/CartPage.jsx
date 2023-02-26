@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from "styled-components"
  import "./Cart.css"
+import { Link } from 'react-router-dom';
 
 const CartPage = () => {
   const [cart, setCart] = useState([]);
@@ -76,6 +77,7 @@ const CartPage = () => {
       
      </div>
       
+      <Link to="/checkout">Checkout</Link>
     </div>
   );
 };

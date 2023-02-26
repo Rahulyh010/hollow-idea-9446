@@ -28,6 +28,8 @@ import ProductPage from '../Pages/ProductPage'
 import AddProducts from '../Components/Admin/AddProducts'
 import AdminDashboard from '../Components/Admin/AdminDashboard'
 import CartPage from '../Pages/CartPage'
+import Not_Found from '../Pages/Not_Found'
+import Checkout from '../Pages/Checkout'
 
 //import { Home } from '../Pages/Home'
 export const AllRoutes = () => {
@@ -44,7 +46,12 @@ export const AllRoutes = () => {
            <Route path="/adminLogin" element={<Login/>}/>
 
 
-          
+            
+            
+            <Route path="/productpage" element={<ProductPage/>} />
+            <Route path="/productpage/:id" element={<ProductDetailPage/>} />
+            
+            <Route path="/AdminProducts" element={<AdminProducts/>} />
             
 
 
@@ -57,13 +64,14 @@ export const AllRoutes = () => {
             <Route path="productpage/id" element={<ProductDetailPage/>} />
           
             <Route path='/cartPage' element={<CartPage/>}/>
+            <Route path='*' element={<Not_Found/>}/>
             
 
    
             {/* <Route path="/AdminProducts" element={<AdminProducts/>} />
              */}
 
-
+<Route path="/checkout" element={<Checkout/>}></Route>
       </Routes>
     </div>
   )

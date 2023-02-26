@@ -28,6 +28,7 @@ const Maindiv = styled.div`
     margin: 0%;
     width: 100%;
     padding: 0%;
+    height: auto;
     /* background-image: url(${background}); */
     
     
