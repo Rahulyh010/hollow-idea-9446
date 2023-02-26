@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Logo from "../Images/Logo.png"
 // <<<<<<< HEAD
 
 // const Navbar = () => {
