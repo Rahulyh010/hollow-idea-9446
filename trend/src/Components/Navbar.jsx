@@ -20,7 +20,9 @@ export const Navbar = () => {
 
       </div>
       <div id="nav02">
+        <Link to={"/signin"}>
 <p>Sign In/login</p>
+        </Link>
 
 <Link to="/adminLogin">
 <div id="admin-nav" >
