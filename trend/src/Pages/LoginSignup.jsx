@@ -1,3 +1,4 @@
+import { ChakraProvider } from "@chakra-ui/provider";
 import { Box, Image, Heading, Text, Input, Button } from "@chakra-ui/react";
 import {
   FormControl,
@@ -172,6 +173,8 @@ export function LoginSignup() {
   };
   //------------------------------------RETURN---------------------------------------------------------
   return (
+    // <ChakraProvider>
+
     <Box
       // id={styles.mainContainer}
       display="flex"
@@ -332,6 +335,7 @@ export function LoginSignup() {
                 mt="20px"
                 isDisabled={userData.otp !== otp}
                 bg="orange"
+                ml={"5px"}
                 onClick={addUser}
               >
                 Verify
@@ -376,5 +380,7 @@ export function LoginSignup() {
         )}
       </Box>
     </Box>
+    // </ChakraProvider>
+
   );
 }

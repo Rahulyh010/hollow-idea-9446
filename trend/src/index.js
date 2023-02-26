@@ -15,7 +15,10 @@ root.render(
   <Provider store={store}>
     <ProSidebarProvider>
       <BrowserRouter>
+      <ChakraProvider>
+
         <App />
+      </ChakraProvider>
       </BrowserRouter>
     </ProSidebarProvider>
   </Provider>
