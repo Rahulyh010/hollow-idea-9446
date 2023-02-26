@@ -1,7 +1,14 @@
-.cart-items{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:10px;
-    
+#cart-div{
+
+    width:80%;
+    height:auto;
+    margin: auto;
+    grid-template-columns: repeat(4,1);
+    grid-template-rows: auto;
+    gap:20px;
+    border:1px solid black;
+}
+
+#cart-div{
     
 }
