@@ -7,6 +7,7 @@ import {reducer as adminProduct} from "./AdminProductReducer/reducer"
 
 
 
+
 const rootReducer=combineReducers({
     product,
     adminauth,
