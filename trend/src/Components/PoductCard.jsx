@@ -1,4 +1,4 @@
-import { background } from '@chakra-ui/react'
+//import { background } from '@chakra-ui/react'
 import React from 'react'
 import styled from "styled-components"
 const ProductCard = ({name,brand,imagePath,mrpRange,discountRange}) => {

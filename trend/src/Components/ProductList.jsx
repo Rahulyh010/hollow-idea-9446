@@ -3,12 +3,13 @@ import {useDispatch, useSelector} from "react-redux"
 //import styled from 'styled-components'
 import { getProductData } from '../Redux/ProductReducer/action'
 import ProductCard from "./PoductCard"
+//import SideBarProduct from './SideBarProduct'
 
 
 const ProductList = () => {
   const dispatch =useDispatch()
   const products=useSelector((store)=>store.product.products)
-  console.log(products)
+  //console.log(products)
   useEffect(()=>{
     dispatch(getProductData)
   },[])
@@ -60,7 +61,9 @@ const ProductList = () => {
         }} >
             {products.length>0 && products.map((item)=>{
               return <ProductCard key={item.id} {...item}/>
+              
             })}
+            
         </div>
     </div>
   )
