@@ -1,9 +1,11 @@
 //import { background } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from "styled-components"
-const ProductCard = ({name,brand,imagePath,mrpRange,discountRange}) => {
+const ProductCard = ({name,brand,imagePath,mrpRange,discountRange,id}) => {
     
   return (
+    <Link to={`/productpage/${id}`}>
     <Maindiv>
       <div style={{width:"100%",margin:"auto", }}>
                   <img style={{
@@ -32,6 +34,7 @@ const ProductCard = ({name,brand,imagePath,mrpRange,discountRange}) => {
       </div>
         
     </Maindiv>
+    </Link>
   )
 }
 

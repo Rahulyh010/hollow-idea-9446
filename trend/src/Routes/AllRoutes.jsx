@@ -36,8 +36,8 @@ export const AllRoutes = () => {
 
             
             
-            <Route path="productpage" element={<ProductPage/>} />
-            <Route path="productpage/:id" element={<ProductDetailPage/>} />
+            <Route path="/productpage" element={<ProductPage/>} />
+            <Route path="/productpage/:id" element={<ProductDetailPage/>} />
             
             <Route path="/AdminProducts" element={<AdminProducts/>} />
             
