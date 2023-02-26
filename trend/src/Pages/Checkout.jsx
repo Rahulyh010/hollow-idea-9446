@@ -1,7 +1,9 @@
 import React from "react";
 import { useToast } from '@chakra-ui/react'
 import "./Checkout.css";
+import { useNavigate } from "react-router";
 const Checkout = () => {
+  const navigate=useNavigate()
     const toast = useToast()
   return (
     <div className="screen flex-center">
@@ -198,7 +200,7 @@ const Checkout = () => {
             </div>
           </div>
           <div className="action flex-center">
-            <button  className="b-main-color pointer"  onClick={() =>
+            <button  className="b-main-color pointer"  onClick={() =>{
         toast({
           position:"top",
           title: 'Successful',
@@ -207,6 +209,8 @@ const Checkout = () => {
           duration: 4000,
           isClosable: true,
         })
+        navigate("/")
+      }
       }>
               Pay Now
             </button>
