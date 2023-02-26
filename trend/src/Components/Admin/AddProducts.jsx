@@ -1,23 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import styled from 'styled-components'
+import { addProduct } from '../../Redux/AdminProductReducer/action';
+
+
+const initialState = {
+  image:"",
+  brand:"",
+  price:"",
+  description:"",
+  gender:"male",
+}
 
 const AddProducts = () => {
+  const [product,setProduct] = useState(initialState);
+  console.log(product)
+  const dispatch = useDispatch();
+
+  
+  
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addProduct(product))
+    setProduct(initialState)
+    
+  }
+
+  const handleChange = (e) => {
+    const {name,value} = e.target;
+    setProduct((prev)=>{
+      return {...prev,[name]: name === "price" ? +value : value}
+    })
+  } 
+  
   return (
     <MasterDiv style={{ marginTop: "1rem" }}>
       <h2 style={{textAlign:"left",marginLeft:"7rem",paddingTop:"1rem"}}>Add Product <span><img style={{width:"2.5%",marginLeft:"0.5rem",marginTop:"0.3rem"}} src="https://cdn-icons-png.flaticon.com/512/7479/7479717.png" alt="" /></span></h2>
       <div >
       <MainDiv>
-        <form action="">
+        <form action="" onSubmit={(e)=>{
+              handleSubmit(e)
+            }}>
           <label htmlFor="">Product Name <span style={{color:"red"}}>*</span></label>
-          <input type="text" placeholder='Enter Product Name' />
+          <input type="text" placeholder='Enter Product Name' name='description' value={product.description} onChange={(e)=>handleChange(e)}/>
           <label htmlFor="">Product Image <span style={{color:"red"}}>*</span></label>
-          <input type="text" placeholder='Enter Image url' />
+          <input type="text" placeholder='Enter Image url' name='image' value={product.image} onChange={(e)=>handleChange(e)}/>
           <label htmlFor="">Product Price <span style={{color:"red"}}>*</span></label>
-          <input type="text" placeholder='Enter Product Price' />
-          <label htmlFor="">Product Description <span style={{color:"red"}}>*</span></label>
-          <input type="text" placeholder='Enter Product Description' />
-          <label htmlFor="">Available Stock <span style={{color:"red"}}>*</span></label>
-          <input type="text" placeholder='Available stock eg. 200' />
+          <input type="text" placeholder='Enter Product Price' name='price' value={product.price} onChange={(e)=>handleChange(e)}/>
+          <br />
+          <label htmlFor="">Brand<span style={{color:"red"}}>*</span></label>
+          <br />
+          <input type="text" placeholder='Brand Name' name='brand' value={product.brand} onChange={(e)=>handleChange(e)}/>
+          <label htmlFor="">Gender <span style={{color:"red"}}>*</span></label>
+          <input type="text" placeholder='male or female or kids' name='gender' value={product.gender} onChange={(e)=>handleChange(e)}/>
         </form>
         <button>Add Product</button>
       </MainDiv>

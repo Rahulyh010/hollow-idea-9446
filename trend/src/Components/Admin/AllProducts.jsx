@@ -9,7 +9,7 @@ const AllProducts = () => {
   return (
     <div>
       <PageDiv style={{ display: "flex", width: "90%" }}>
-        <div><h2 style={{ textAlign: "left", marginLeft: "4rem" }}>All Products</h2></div>
+        <div><h2 style={{ textAlign: "left", marginLeft: "4rem",fontSize:"25px" }}>All Products</h2></div>
         <div>
           <button onClick={()=>navigate("/AddProducts")}>Add New Product</button>
         </div>

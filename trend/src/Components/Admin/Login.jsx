@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import { AiOutlineLogin } from 'react-icons/ai';
 import { BsArrowReturnLeft } from 'react-icons/bs';
 import styled from 'styled-components';
-import { toast, ToastContainer } from 'react-toastify';
+import { useToast } from '@chakra-ui/react'
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { LoginProcess } from '../../Redux/AdminAuthReducer/action';
-import { store } from '../../Redux/store';
+// import { store } from '../../Redux/store';
 import { useNavigate } from 'react-router';
+
+
 
 
 
@@ -16,68 +18,71 @@ import { useNavigate } from 'react-router';
 
 const Login = () => {
     // Toast or alert code
+    const toast = useToast()
     const successToast = () => {
-        toast("Login Successfull");
+        toast({
+            title: "Login Successully",
+
+            Duration: "5000",
+            isClosable: "true",
+            status: "success",
+            position: "top"
+        })
 
     }
     // Login Logic
-    const [email,setEmail] = useState("eve.holt@reqres.in");
-    const [password,setPassword] = useState("")
+    const [email, setEmail] = useState("eve.holt@reqres.in");
+    const [password, setPassword] = useState("")
     // console.log(email,password)
     const dispatch = useDispatch();
     const navigate = useNavigate()
     const handleLogin = () => {
-        let userData = {email,password};
+        let userData = { email, password };
         dispatch(LoginProcess(userData))
         successToast()
     }
 
-    const loginData = useSelector((store)=>{
+    const loginStatus = useSelector((store) => {
         // {console.log(store.adminauth.isAuth,store.adminauth.token)}
-        if(store.adminauth.isAuth){
-            navigate("/Admin")
-            // successToast()
-        }
+        // if(store.adminauth.isAuth){
+        //     navigate("/Admin")
+        //     // successToast()
+        // }
+        return store.adminauth.isAuth
     })
+    if(loginStatus){
+        navigate("/Admin")
+        // successToast()
+    }
+    // {loginStatus? navigate("/Admin") : navigate("/")}
 
     return (
-       
+
         <MainDiv>
-             
-            <ToastContainer
-                position="top-center"
-                autoClose={7000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover={false}
-                theme="dark"
-            />
+
+
             <br />
 
-            
-            <InputDiv>
-                <h1>Welcome Back!</h1>
-                <p>Please Login To Your Account</p>
 
-                <input type="email" placeholder='Email Address' value={email} onChange={(e)=>setEmail(e.target.value)}/>
+            <InputDiv>
+                <WelcomeBack>Welcome Back!</WelcomeBack>
+                <p>Please Login To Your Account</p>
+                <br />
+                <input type="email" placeholder='Email Address' value={email} onChange={(e) => setEmail(e.target.value)} />
                 <br />
                 <br />
-                <input type="password" placeholder='Enter Password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                <input type="password" placeholder='Enter Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                 <ForgetPass>Forgot Password ?</ForgetPass>
                 <br />
                 <br />
                 <div>
-                    <button onClick={handleLogin}>Login <AiOutlineLogin /></button>
+                    <button style={{ marginTop: "-1rem" }} onClick={handleLogin}>Login <AiOutlineLogin /></button>
 
                 </div>
-                <button onClick={()=>navigate(-1)}> <BsArrowReturnLeft/> Back To Main Website </button>
+                <button style={{ marginTop: "1rem" }} onClick={() => navigate(-1)}> <BsArrowReturnLeft /> Back To Main Website </button>
 
             </InputDiv>
-            
+
         </MainDiv>
     )
 }
@@ -90,20 +95,24 @@ const ForgetPass = styled.p`
     cursor: pointer;
 `
 
+const WelcomeBack = styled.h1`
+    font-size:30px;
+`
+
 
 const InputDiv = styled.div`
-    width: 23%;
+    width: 30%;
     margin: auto;
-    height: 30rem;
+    height: 33rem;
     background-color: #ffffff;
     padding: 3rem;
     border-radius:2rem;
     & button {
         width: 100%;
         padding: 1rem;
-        margin-top:1rem;
+        margin-top:rem;
         display: flex;
-        border-radius: 1rem;
+        border-radius: 2rem;
         border: 0ch;
         color: white;
         background-color: #37a279;
@@ -117,7 +126,7 @@ const InputDiv = styled.div`
     }& button:hover {
         width: 100%;
         padding: 1rem;
-        border-radius: 1rem;
+        border-radius: 2rem;
         border: 0ch;
         color: white;
         background-color: #11724d;
@@ -128,7 +137,8 @@ const InputDiv = styled.div`
 const MainDiv = styled.div`
     width: 99.8%;
     margin: auto;
-    margin-top:0rem;
+    margin-top:-1rem;
+    padding-top:3rem;
     height: 45rem;
     /* background-color: #8ff03b; */
     background-image: url("https://img.freepik.com/premium-vector/clothes-items-white-background-seamless-pattern-thin-line_48369-13298.jpg?w=740");

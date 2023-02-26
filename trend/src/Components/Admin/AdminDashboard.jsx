@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { FaChartPie } from "react-icons/fa";
+
 import { RiHome7Fill } from "react-icons/ri";
 import Chart from './Chart';
 import { useNavigate } from 'react-router';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProduct } from '../../Redux/AdminProductReducer/action';
+import { useSelector } from 'react-redux';
+
 
 const AdminDashboard = () => {
 
@@ -22,10 +22,12 @@ const AdminDashboard = () => {
     navigate("/AllProducts")
     // alert("working")
   }
+
+  
  
   return (
     <Maindiv>
-      <h2>Dashboard <RiHome7Fill /></h2>
+      <h2 style={{fontSize:"25px",display:"flex",paddingLeft:"1rem"}}> <RiHome7Fill />Dashboard </h2>
       <div style={{ padding: "2rem" }}>
         <div style={{ display: "flex" }}>
           <DetailsDiv style={{ width: "60%" }}>
@@ -65,6 +67,7 @@ const Maindiv = styled.div`
     width: 95%;
     height: auto;
     margin: auto;
+    margin-top:2rem;
     /* background-color: rgba(255, 255, 255, .15);   */
     background-color: #def8e3;
     border-radius:2rem;
@@ -83,7 +86,9 @@ const DetailsDiv = styled.div`
   
   & img {
     width: 20%;
+    margin: auto;
   }& div {
+    
     cursor:pointer;
     padding: 1rem;
     border-radius: 1rem;
@@ -96,7 +101,8 @@ const DetailsDiv = styled.div`
   }
   & h2 {
     color: grey;
-    
+    margin-top:1rem;
+    font-size:27px;
   }& h3 {
     color:#000080;
     font-size:25px;
