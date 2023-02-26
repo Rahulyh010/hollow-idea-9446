@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { AiOutlineLogin } from 'react-icons/ai';
+import { BsArrowReturnLeft } from 'react-icons/bs';
 import styled from 'styled-components';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LoginProcess } from '../../Redux/AdminAuthReducer/action';
 import { store } from '../../Redux/store';
 import { useNavigate } from 'react-router';
+
 
 
 
@@ -39,7 +41,9 @@ const Login = () => {
     })
 
     return (
+       
         <MainDiv>
+             
             <ToastContainer
                 position="top-center"
                 autoClose={7000}
@@ -54,7 +58,7 @@ const Login = () => {
             />
             <br />
 
-
+            
             <InputDiv>
                 <h1>Welcome Back!</h1>
                 <p>Please Login To Your Account</p>
@@ -70,6 +74,7 @@ const Login = () => {
                     <button onClick={handleLogin}>Login <AiOutlineLogin /></button>
 
                 </div>
+                <button onClick={()=>navigate(-1)}> <BsArrowReturnLeft/> Back To Main Website </button>
 
             </InputDiv>
             
@@ -96,6 +101,7 @@ const InputDiv = styled.div`
     & button {
         width: 100%;
         padding: 1rem;
+        margin-top:1rem;
         display: flex;
         border-radius: 1rem;
         border: 0ch;
@@ -103,6 +109,7 @@ const InputDiv = styled.div`
         background-color: #37a279;
         font-size:20px;
         justify-content:center;
+        gap: 0.5rem;
         text-align: center;
         align-items: center;
         
@@ -122,9 +129,9 @@ const MainDiv = styled.div`
     width: 99.8%;
     margin: auto;
     margin-top:0rem;
-    height: 40rem;
+    height: 45rem;
     /* background-color: #8ff03b; */
-    background-image: url("https://img.freepik.com/free-photo/shirt-mockup-concept-with-plain-clothing_23-2149448749.jpg?w=996&t=st=1677236919~exp=1677237519~hmac=0a547041f316047105d9b140f319c4d355f943062ea6a9cc452e8474b371cfa3");
+    background-image: url("https://img.freepik.com/premium-vector/clothes-items-white-background-seamless-pattern-thin-line_48369-13298.jpg?w=740");
     & input {
         
         border: 1px solid #6ee78d;

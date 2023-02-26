@@ -15,7 +15,7 @@ const AdminRoutes = () => {
       <Routes>
         <Route path="/" element={<AdminDashboard />} />
         <Route path="/AllProducts" element={<AllProducts />} />
-        <Route path="/Dashboard" element={<AdminDashboard />} />
+        {/* <Route path="/Dashboard" element={<AdminDashboard />} /> */}
         <Route path="/AdminProducts" element={<PrivateRoutes><AdminProducts /></PrivateRoutes>} />
         <Route path="/AddProducts" element={<PrivateRoutes><AddProducts /></PrivateRoutes>} />
         <Route path="/Login" element={<Login />} />
