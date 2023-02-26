@@ -166,7 +166,7 @@ export function LoginSignup() {
       existingUserData.existingEmail === userExist.email &&
       existingUserData.existingPassword === userExist.password
     ) {
-      navigate("/products");
+      navigate("/");
     } else {
       alert("email or password is wrong");
     }

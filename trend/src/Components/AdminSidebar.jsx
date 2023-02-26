@@ -17,7 +17,7 @@ const AdminSidebar = () => {
   return (
     <SidebarMain>
       <Link to="/"><div><img src={Logo} alt="" style={{width:"12rem",marginLeft:"3rem",marginTop:"2rem"}}/></div></Link>
-      <div style={{ display: 'flex', height: 'auto',display:"block"}}>
+      <div style={{ display: 'flex', height: 'auto',marginTop:"7rem"}}>
         <Sidebar  style={{width:"100%",marginTop:"-5rem"}}>
           <Menu>
           <Link to="/" style={{textDecoration:"none"}} ><MenuItem> <AiFillHome style={{marginLeft:"0.5rem",marginRight:"1.2rem"}}/>Dashboard </MenuItem></Link>
@@ -51,9 +51,10 @@ export default AdminSidebar
 
 const SidebarMain = styled.div`
     width: 300px;
-    height: 800px;
+    height: auto;
     display: grid;
-    background-color: white;
+    
+    
     /* background: rgb(228,233,177);
     background: linear-gradient(90deg, rgba(228,233,177,1) 10%, rgba(209,248,251,1) 58%); */
     margin-left:0;

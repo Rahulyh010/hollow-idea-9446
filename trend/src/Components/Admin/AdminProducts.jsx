@@ -4,8 +4,8 @@ import AdminProductCard from './AdminProductCard'
 const AdminProducts = () => {
   return (
     <div>
-        <h1>All Products</h1>
-        <AdminProductCard/>
+      <h1 style={{textAlign:"left"}}>All Products</h1>
+      <AdminProductCard />
     </div>
   )
 }
