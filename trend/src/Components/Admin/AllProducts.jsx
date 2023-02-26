@@ -1,8 +1,12 @@
 import React from 'react'
+import AdminProductCard from './AdminProductCard'
+import AdminProductsList from './AdminProductsList'
 
 const AllProducts = () => {
   return (
-    <div>AllProducts</div>
+    <div>
+      <AdminProductsList/>
+    </div>
   )
 }
 
