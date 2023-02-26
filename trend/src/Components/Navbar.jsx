@@ -28,6 +28,7 @@ export const Navbar = () => {
     }
  }
 
+ 
  const logout=()=>{
   console.log(currentUser.id,"currentUser.id")
   updateUserAuthStatus(currentUser.id,{isAuth:false})
