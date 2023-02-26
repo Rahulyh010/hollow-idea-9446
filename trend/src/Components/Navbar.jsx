@@ -10,6 +10,7 @@ import React, { useState } from 'react'
 // export default Navbar
 // =======
 import { Link } from 'react-router-dom'
+import { updateUserAuthStatus } from '../Redux/AuthReducer/action';
 import "../Styles/Navbar.css"
 
 export const Navbar = () => {
@@ -26,6 +27,21 @@ export const Navbar = () => {
        setShowMenu(true);
     }
  }
+
+ const logout=()=>{
+  console.log(currentUser.id,"currentUser.id")
+  updateUserAuthStatus(currentUser.id,{isAuth:false})
+  currentUser.isAuth = false;
+  localStorage.setItem("currentUser",JSON.stringify(currentUser))
+  if(showLogin===false){
+    setShowLogin(true)
+   }
+   if(showMenu===true){
+      setShowMenu(false);
+   }
+  //  localStorage
+}
+
   return (
     <div id="nav-main1" >
     <div id="nav" >
@@ -41,6 +57,7 @@ export const Navbar = () => {
       {showMenu && 
         <p>  Hi, {currentUser.firstName}</p>
       }
+      <button onClick={logout}>Logout</button>
 <Link to="/adminLogin">
 <div id="admin-nav" >
 Admin
