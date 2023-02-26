@@ -46,7 +46,12 @@ export const AllRoutes = () => {
            <Route path="/adminLogin" element={<Login/>}/>
 
 
-          
+            
+            
+            <Route path="/productpage" element={<ProductPage/>} />
+            <Route path="/productpage/:id" element={<ProductDetailPage/>} />
+            
+            <Route path="/AdminProducts" element={<AdminProducts/>} />
             
 
 
