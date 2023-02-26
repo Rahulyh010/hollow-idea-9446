@@ -28,6 +28,7 @@ import ProductPage from '../Pages/ProductPage'
 import AddProducts from '../Components/Admin/AddProducts'
 import AdminDashboard from '../Components/Admin/AdminDashboard'
 import CartPage from '../Pages/CartPage'
+import Not_Found from '../Pages/Not_Found'
 
 //import { Home } from '../Pages/Home'
 export const AllRoutes = () => {
@@ -57,6 +58,7 @@ export const AllRoutes = () => {
             <Route path="productpage/id" element={<ProductDetailPage/>} />
           
             <Route path='/cartPage' element={<CartPage/>}/>
+            <Route path='*' element={<Not_Found/>}/>
             
 
    
