@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // <<<<<<< HEAD
 
 // const Navbar = () => {
@@ -13,6 +13,19 @@ import { Link } from 'react-router-dom'
 import "../Styles/Navbar.css"
 
 export const Navbar = () => {
+  const [showLogin, setShowLogin] = useState(true);
+  const [showMenu,setShowMenu] = useState(false);
+
+  let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  if(currentUser && currentUser.isAuth === true){
+    if(showLogin===true){
+     setShowLogin(false)
+    }
+    if(showMenu===false){
+       setShowMenu(true);
+    }
+ }
   return (
     <div id="nav-main1" >
     <div id="nav" >
@@ -20,10 +33,14 @@ export const Navbar = () => {
 
       </div>
       <div id="nav02">
+      {showLogin && 
         <Link to={"/signin"}>
 <p>Sign In/login</p>
         </Link>
-
+      }
+      {showMenu && 
+        <p>  Hi, {currentUser.firstName}</p>
+      }
 <Link to="/adminLogin">
 <div id="admin-nav" >
 Admin
