@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from "../Images/Logo.png"
 // <<<<<<< HEAD
 
@@ -11,9 +11,39 @@ import Logo from "../Images/Logo.png"
 // export default Navbar
 // =======
 import { Link } from 'react-router-dom'
+import { updateUserAuthStatus } from '../Redux/AuthReducer/action';
 import "../Styles/Navbar.css"
 
 export const Navbar = () => {
+  const [showLogin, setShowLogin] = useState(true);
+  const [showMenu,setShowMenu] = useState(false);
+
+  let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  if(currentUser && currentUser.isAuth === true){
+    if(showLogin===true){
+     setShowLogin(false)
+    }
+    if(showMenu===false){
+       setShowMenu(true);
+    }
+ }
+
+ 
+ const logout=()=>{
+  console.log(currentUser.id,"currentUser.id")
+  updateUserAuthStatus(currentUser.id,{isAuth:false})
+  currentUser.isAuth = false;
+  localStorage.setItem("currentUser",JSON.stringify(currentUser))
+  if(showLogin===false){
+    setShowLogin(true)
+   }
+   if(showMenu===true){
+      setShowMenu(false);
+   }
+  //  localStorage
+}
+
   return (
     <div id="nav-main1" >
     <div id="nav" >
@@ -21,10 +51,15 @@ export const Navbar = () => {
 
       </div>
       <div id="nav02">
+      {showLogin && 
         <Link to={"/signin"}>
 <p>Sign In/login</p>
         </Link>
-
+      }
+      {showMenu && 
+        <p>  Hi, {currentUser.firstName}</p>
+      }
+      <button onClick={logout}>Logout</button>
 <Link to="/adminLogin">
 <div id="admin-nav" >
 Admin

@@ -12,14 +12,16 @@ import axios from "axios"
 }
 
 export const getProductData=(dispatch)=>{
-    console.log("running")
+   // console.log("running")
   dispatch(getDataRequest)
 
-  axios.get("http://localhost:8080/mens-t-shirt")
+  axios.get("https://product-api-q2uk.onrender.com/mens-jeans")
   .then((res)=>{
-    console.log(res)
+    //console.log(res)
     dispatch(getDataSuccess(res.data))
   }).catch((err)=>{
     dispatch(getDataFailure())
   })
 } 
+
+// ${parm.mens-jeans&&parm.mens-tshirt }
