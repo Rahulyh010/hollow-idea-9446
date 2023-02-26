@@ -107,6 +107,7 @@ const InputDiv = styled.div`
     background-color: #ffffff;
     padding: 3rem;
     border-radius:2rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     & button {
         width: 100%;
         padding: 1rem;

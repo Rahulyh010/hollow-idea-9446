@@ -34,7 +34,7 @@ const AdminNavbar = () => {
    
     dispatch(LogoutProcess())
     LogoutToast()
-    navigate("/")
+    navigate("/adminLogin")
     
 
     
