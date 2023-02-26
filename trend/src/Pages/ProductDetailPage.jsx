@@ -26,11 +26,28 @@ import {
   VisuallyHidden,
   List,
   ListItem,
+  Grid,
+  GridItem,
 } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { MdLocalShipping } from 'react-icons/md';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router';
 
-export default function ProductDetailPage() {
+export default function ProductDetailPage(){
+  const {id}=useParams();
+  const product=useSelector((store)=>store.product.products)
+  const[data,setData]=useState({});
+ // console.log(id)
+  useEffect(()=>{
+    const productData=product.find((el)=>el.id===id)
+    productData && setData(productData)
+  },[])
+   const{mrpRange}=data
+  const handleAddCart=(id)=>{
+    console.log(id)
+  }
   return (
     <Container maxW={'7xl'}>
       <SimpleGrid
@@ -38,17 +55,43 @@ export default function ProductDetailPage() {
         spacing={{ base: 8, md: 10 }}
         py={{ base: 18, md: 24 }}>
         <Flex>
+        <Grid templateColumns='repeat(1, 1fr)' gap={6} h="3">
+          
+            <Image rounded={'md'}
+            alt={'product image'}
+            src={data.imagePath}
+            fit={'cover'} h={'l'}
+            align={'center'}
+            />
+            <Image rounded={'md'}
+            alt={'product image'}
+            src={data.altImagePath}
+            fit={'cover'} h={'l'}
+            align={'center'}
+            />
+            <Image rounded={'md'}
+            alt={'product image'}
+            src={data.imagePath}
+            fit={'cover'} h={'l'}
+            align={'center'}
+            />
+        </Grid>
+        <VStack spacing={{ base: 4, sm: 6 }}>
           <Image
             rounded={'md'}
             alt={'product image'}
-            src={
-              'https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080'
-            }
+            src={data.imagePath}
             fit={'cover'}
             align={'center'}
             w={'100%'}
             h={{ base: '100%', sm: '400px', lg: '500px' }}
           />
+          <Text fontSize={'lg'}>
+          Easy 15 days return and exchange. 
+          Return Policies may vary based on products and promotions. 
+          For full details on our Returns Policies, please click here․
+          </Text>
+          </VStack>
         </Flex>
         <Stack spacing={{ base: 6, md: 10 }}>
           <Box as={'header'}>
@@ -56,13 +99,13 @@ export default function ProductDetailPage() {
               lineHeight={1.1}
               fontWeight={600}
               fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-              Automatic Watch
+              {data.name}
             </Heading>
             <Text
               color={useColorModeValue('gray.900', 'gray.400')}
               fontWeight={300}
               fontSize={'2xl'}>
-              $350.00 USD
+              Rs.{mrpRange.max}
             </Text>
           </Box>
 
@@ -82,12 +125,7 @@ export default function ProductDetailPage() {
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore
               </Text>
-              <Text fontSize={'lg'}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                aliquid amet at delectus doloribus dolorum expedita hic, ipsum
-                maxime modi nam officiis porro, quae, quisquam quos
-                reprehenderit velit? Natus, totam.
-              </Text>
+              
             </VStack>
             <Box>
               <Text
@@ -182,7 +220,7 @@ export default function ProductDetailPage() {
             _hover={{
               transform: 'translateY(2px)',
               boxShadow: 'lg',
-            }}>
+            }} onClick={handleAddCart}>
             Add to cart
           </Button>
 

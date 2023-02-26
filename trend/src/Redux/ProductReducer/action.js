@@ -23,3 +23,5 @@ export const getProductData=(dispatch)=>{
     dispatch(getDataFailure())
   })
 } 
+
+// ${parm.mens-jeans&&parm.mens-tshirt }
