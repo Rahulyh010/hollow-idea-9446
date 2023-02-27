@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
-// import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components'
 import { addProduct } from '../../Redux/AdminProductReducer/action';
 
@@ -15,14 +14,19 @@ const initialState = {
 
 const AddProducts = () => {
   const [product,setProduct] = useState(initialState);
-  console.log(product)
+  // console.log(product)
   const dispatch = useDispatch();
+
+  // const PostedProd = useSelector((store)=>{
+  //   console.log(store)
+  // })
 
   
   
 
 
   const handleSubmit = (e) => {
+    alert("submitForm")
     e.preventDefault();
     dispatch(addProduct(product))
     setProduct(initialState)
@@ -41,7 +45,7 @@ const AddProducts = () => {
       <h2 style={{textAlign:"left",marginLeft:"7rem",paddingTop:"1rem",fontSize:"25px"}}>Add Product <span></span></h2>
       <div >
       <MainDiv>
-        <form action="" onSubmit={(e)=>{
+        <form onSubmit={(e)=>{
               handleSubmit(e)
             }}>
           <label htmlFor="">Product Name <span style={{color:"red"}}>*</span></label>
@@ -59,9 +63,14 @@ const AddProducts = () => {
           <br />
           <label htmlFor="">Gender <span style={{color:"red"}}>*</span></label>
           <br />
-          <input type="text" placeholder='male or female or kids' name='gender' value={product.gender} onChange={(e)=>handleChange(e)}/>
+          
+
+          <input type='submit' placeholder='male or female or kids' name='gender' value={product.gender} onChange={(e)=>handleChange(e)}/>
+          <br />
+          <br />
+          <button type='submit'>Add Product</button>
         </form>
-        <button>Add Product</button>
+        
       </MainDiv>
       </div>
       

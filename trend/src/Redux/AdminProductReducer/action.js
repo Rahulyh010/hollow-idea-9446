@@ -24,8 +24,11 @@ export const addProduct = (payLoad) => (dispatch) => {
     axios.post("https://product-api-q2uk.onrender.com/new_Arrival",payLoad).then(()=>{
         
         dispatch(postProductSuccess())
+        alert("Working")
     }).catch((err)=>{
+        alert("error")
         dispatch(productFailure())
+        
     })
 
 }
