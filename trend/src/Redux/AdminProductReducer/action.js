@@ -38,6 +38,7 @@ export const getProduct = (dispatch) => {
     axios.get("https://product-api-q2uk.onrender.com/new_Arrival").then((res)=>{
         console.log(res)
         dispatch(getProductSuccess(res.data))
+       
     }).catch((err)=>{
         dispatch(productFailure())
     })

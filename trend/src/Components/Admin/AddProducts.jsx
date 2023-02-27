@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components'
 import { addProduct } from '../../Redux/AdminProductReducer/action';
-
+import {  useToast } from '@chakra-ui/react'
 
 const initialState = {
   image:"",
@@ -16,12 +16,22 @@ const AddProducts = () => {
   const [product,setProduct] = useState(initialState);
   // console.log(product)
   const dispatch = useDispatch();
-
+  const toast = useToast()
   // const PostedProd = useSelector((store)=>{
   //   console.log(store)
   // })
 
-  
+  const AddProductToast = () => {
+    toast({
+      title:"Product Added",
+      description:"Your Product Added SuccessFully",
+      Duration:"5000",
+      isClosable:"true",
+      status:"success",
+      position:"top"
+    })
+
+  }
   
 
 
@@ -29,6 +39,7 @@ const AddProducts = () => {
     e.preventDefault();
     dispatch(addProduct(product))
     setProduct(initialState)
+    AddProductToast()
     
   }
 
@@ -38,6 +49,8 @@ const AddProducts = () => {
       return {...prev,[name]: name === "price" ? +value : value}
     })
   } 
+
+
   
   return (
     <MasterDiv style={{ marginTop: "1rem" }}>
