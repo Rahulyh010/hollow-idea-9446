@@ -26,7 +26,6 @@ const AddProducts = () => {
 
 
   const handleSubmit = (e) => {
-    alert("submitForm")
     e.preventDefault();
     dispatch(addProduct(product))
     setProduct(initialState)
