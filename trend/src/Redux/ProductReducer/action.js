@@ -1,4 +1,4 @@
-import { GET_DATA_FAILURE, GET_DATA_REQUEST, GET_DATA_SUCCESS } from "./actionType"
+import { CART, GET_DATA_FAILURE, GET_DATA_REQUEST, GET_DATA_SUCCESS } from "./actionType"
 import axios from "axios"
 
  const getDataRequest = ()=>{
@@ -25,3 +25,8 @@ export const getProductData=(dispatch)=>{
 } 
 
 // ${parm.mens-jeans&&parm.mens-tshirt }
+
+export function handleCart(payload){
+  console.log(payload)
+  return {type:CART,payload}
+}

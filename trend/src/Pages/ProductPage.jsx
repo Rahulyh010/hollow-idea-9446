@@ -7,6 +7,9 @@ import SideBarProduct from '../Components/SideBarProduct'
 const ProductPage = () => {
   return (
    <>
+   <div style={{height:"115px"}} >
+
+   </div>
     <Navbar/>
     <div style={{display:"flex", 
                 width:"85%",

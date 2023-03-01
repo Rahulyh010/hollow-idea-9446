@@ -1,10 +1,32 @@
 //import { background } from '@chakra-ui/react'
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
+import { handleCart } from '../Redux/ProductReducer/action'
 const ProductCard = ({name,brand,imagePath,mrpRange,discountRange,id}) => {
-    
+  
+  const prod={
+    name,
+    brand,
+    imagePath,
+    mrpRange,
+    discountRange,
+    id
+  }
+
+  const dispatch=useDispatch()
+
+  function HandleAddCart(){
+   
+    dispatch(handleCart(prod))
+
+
+
+  }
+
   return (
+    <div>
     <Link to={`/productpage/${id}`}>
     <Maindiv>
       <div style={{width:"100%",margin:"auto", }}>
@@ -32,9 +54,12 @@ const ProductCard = ({name,brand,imagePath,mrpRange,discountRange,id}) => {
           
         <h5 style={{color:"green",marginTop:"-5px",fontSize:"10px"}}>Offer price Rs.{mrpRange.min}</h5>
       </div>
-        
+       
     </Maindiv>
+   
     </Link>
+    <button onClick={HandleAddCart} >Add To Cart</button>
+    </div>
   )
 }
 
