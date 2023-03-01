@@ -6,7 +6,7 @@ const Checkout = () => {
   const navigate=useNavigate()
     const toast = useToast()
   return (
-    <div className="screen flex-center">
+    <div className="screen flex-center" style={{marginTop:"110px"}} >
       <form className="popup flex p-lg">
         <div className="close-btn pointer flex-center p-sm">
           <i className="ai-cross"></i>

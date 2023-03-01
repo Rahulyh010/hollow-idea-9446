@@ -27,9 +27,10 @@ import AdminProducts from '../Components/Admin/AdminProducts'
 import ProductPage from '../Pages/ProductPage'
 import AddProducts from '../Components/Admin/AddProducts'
 import AdminDashboard from '../Components/Admin/AdminDashboard'
-import CartPage from '../Pages/CartPage'
+
 import Not_Found from '../Pages/Not_Found'
 import Checkout from '../Pages/Checkout'
+import { CartPage } from '../Pages/CartPage'
 
 //import { Home } from '../Pages/Home'
 export const AllRoutes = () => {
