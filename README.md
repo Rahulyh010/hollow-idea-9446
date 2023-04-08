@@ -1,33 +1,29 @@
 # TREND [Diployed Link](https://trend-olive.vercel.app/)
 
 
-<h3>Booking.com is a Dutch online travel agency for
-lodging reservations & other travel products, and a subsidiary of
-Booking Holding.</h3>
+<h3>Trend is an E-Commerce website that allows users to shop online stuffs like clothing, accessories and many more.</h3>
 
 <h4>This is a collaborative project & team members are:-</h4>
 <ul>
-  <li>Sapna Sharma (Team lead)</li>
-   <li>Harish Pampana</li>
-   <li>Shubham Kumar</li>
+  <li>Rahul (Team lead)</li>
    <li>Avinash Kalmegh</li>
-   <li>Sohel Syed</li>
+   <li>Vivek Agarwal</li>
+   <li>Bhaggyesh Kharode</li>
+   <li>M D Faizan</li>
 </ul>
 
 
 
-## Tech Stacks Used:
+## Tech Stack Used:
 <ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-<li>BootStrap</li>
+<li>React</li>
+  <li>Chakra UI</li>
 </ul>
 
 ## Features:-
 <ul>
-  <li>Authentication</li>
-   <li>Admin dunctionalities</li>
+  <li>User Authentication</li>
+   <li>Admin Authentication</li>
    <li>Search suggetions</li>
    <li>Add to cart</li>
    <li>checkout feature</li>
