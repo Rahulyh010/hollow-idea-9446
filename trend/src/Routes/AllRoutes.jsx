@@ -16,6 +16,9 @@ import CartPage from "../Pages/CartPage";
 import Not_Found from "../Pages/Not_Found";
 import Checkout from "../Pages/Checkout";
 
+import AdminDashboard from '../Components/Admin/AdminDashboard'
+
+
 export const AllRoutes = () => {
   return (
     <div>

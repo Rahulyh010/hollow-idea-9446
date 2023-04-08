@@ -7,7 +7,7 @@ import AllProducts from '../Components/Admin/AllProducts'
 import Login from '../Components/Admin/Login'
 import PrivateRoutes from '../Components/Admin/PrivateRoutes'
 
-import Admin from '../Pages/Admin'
+// import Admin from '../Pages/Admin'
 
 const AdminRoutes = () => {
   return (
@@ -18,7 +18,7 @@ const AdminRoutes = () => {
         {/* <Route path="/Dashboard" element={<AdminDashboard />} /> */}
         <Route path="/AdminProducts" element={<PrivateRoutes><AdminProducts /></PrivateRoutes>} />
         <Route path="/AddProducts" element={<PrivateRoutes><AddProducts /></PrivateRoutes>} />
-        <Route path="/Login" element={<Login />} />
+        {/* <Route path="/Login" element={<Login />} /> */}
       </Routes>
     </div>
   )
