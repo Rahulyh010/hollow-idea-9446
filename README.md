@@ -32,49 +32,50 @@
 
 <hr>
 
-* HomePage:![Screenshot (310)](https://user-images.githubusercontent.com/107553043/230719774-2786d0d2-f4ce-456f-91f5-6eff778237f3.png)
+* HomePage:
+![Screenshot (310)](https://user-images.githubusercontent.com/107553043/230719774-2786d0d2-f4ce-456f-91f5-6eff778237f3.png)
 
-* ![image](https://i.ibb.co/fQYB1sS/bookit-home.png)
-
-<hr>
-
-* Flight Booking Page: 
-* ![image](https://i.ibb.co/DgYPmzJ/flight-bookit.png)
 
 <hr>
 
-* Car Booking Page:
-* ![image](https://i.ibb.co/61qDCZD/bookit3car.png)
+* Products Page: 
+* ![Screenshot (311)](https://user-images.githubusercontent.com/107553043/230719964-d1912c1b-79fc-43a7-b50e-ad1f0975af61.png)
+
 
 <hr>
 
-* Booking Page:
-* ![image](https://i.ibb.co/hMSR55R/bookit-booking-page.png)
+* Product Detail Page:
+* ![Screenshot (312)](https://user-images.githubusercontent.com/107553043/230720034-a51ca76a-c714-47ba-b81b-8871fef74219.png)
+
+<hr>
+
+* Signin Page:
+* ![Screenshot (313)](https://user-images.githubusercontent.com/107553043/230720111-a8ff6e5b-e6e9-4321-abbd-a3015bc26a79.png)
 
 <hr>
 
 * Register Page:
-* ![image](https://i.ibb.co/h9Z3Nn0/bookit-sigin.png)
+* ![Screenshot (314)](https://user-images.githubusercontent.com/107553043/230720147-094bb1c3-e5ef-42f2-8d9a-1a80d1ab18a5.png)
 
 <hr>
 
-* Sign In Page: 
-* ![image](https://i.ibb.co/jh97KND/bookit-sign.png)
+<hr>
+
+* Admin Signin Page: 
+* ![Screenshot (315)](https://user-images.githubusercontent.com/107553043/230720188-91b24462-39ae-41ee-b0db-7adccccd5ff6.png)
+
 
 <hr>
 
-* Admin Page: 
-* ![image](https://i.ibb.co/r7Jx1dF/bookiit-admin-page.png)
+* Admin Dashboard Page: 
+* ![Screenshot (316)](https://user-images.githubusercontent.com/107553043/230720242-f825bbcf-f11f-4af1-9ef6-d6047e842525.png)
+
 
 <hr>
 
-* Admin Manage Page: 
-* ![image](https://i.ibb.co/MSMt4hh/bookit-admin-page-show-list.png)
+* Admin Products Manage page
+* ![Screenshot (317)](https://user-images.githubusercontent.com/107553043/230720277-9558f2bf-a792-4264-a67b-6e4d938efc59.png)
 
-<hr>
-
-* Booking Details page
-* ![image](https://i.ibb.co/Y0DgqyS/bookit-details-page.png)
 
 <hr>
 
