@@ -34,6 +34,7 @@ import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { MdLocalShipping } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProductDetailPage(){
   const {id}=useParams();
@@ -45,8 +46,23 @@ export default function ProductDetailPage(){
     productData && setData(productData)
   },[])
    const{mrpRange}=data
-  const handleAddCart=(id)=>{
-    console.log(id)
+
+   const navigate=useNavigate()
+  
+   const item = JSON.parse(localStorage.getItem("item"));
+   const arr = JSON.parse(localStorage.getItem("cart")) || []
+  const handleAddCart=async()=>{
+    try {
+      let r=await fetch("https://json-servermock3-pearl.vercel.app/cart",{
+        method:"POST",
+        body:JSON.stringify(data),
+        headers:{"Content-Type":"application/json"}
+
+      })
+      navigate("/cartPage")
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <Container maxW={'7xl'}>
