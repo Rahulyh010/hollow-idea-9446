@@ -6,7 +6,9 @@ import ProductCard from "../Components/PoductCard";
 
 export const CartPage = () => {
   const [data, setData] = useState([]);
+  const [page,setPage]=useState(1)
   const products = useSelector((store) => store.product.cart);
+
 
   console.log(products);
 
@@ -19,6 +21,7 @@ export const CartPage = () => {
       console.log(error);
     }
   };
+
   console.log(data);
   useEffect(() => {
     getData();
@@ -41,9 +44,13 @@ export const CartPage = () => {
           return(
             <div key={el.id}>
             <img src={el.altImagePath} alt="" />
-            <p>Product Name : {el.name}</p>
+           <h1 style={{fontWeight:"bold",fontSize:"18px"}}>Product Name:<span style={{color:"gray"}}>{el.name}</span></h1>
             <p>Brand  : {el.brand}</p>
-            <p>Discount Range : <br /> <span>min : {el.discountRange["min"] } & max:{el.discountRange["max"]}</span> </p>
+            <p>Discount Range : <span>min : {el.discountRange["min"] }</span> </p>
+            <h1 style={{fontWeight:"bold",fontSize:"18px"}}>Price : <span style={{color:"gray"}}>{el.mrpRange.min}</span></h1>
+            <Button onClick={()=>{setPage(page+1)}} bg={"red"} padding={"0px 0px"}>+</Button>
+            <span>{page}</span>
+            <Button onClick={()=>{setPage(page-1)}} isDisabled={page===0} bg={"red"}>-</Button>
             </div>
           )
         })
@@ -51,7 +58,7 @@ export const CartPage = () => {
 
     </div>
     <Link to="/checkout">
-    <button >CHECKOUT</button>
+    <Button bg={"blue.500"} color={"white"}>CHECKOUT</Button>
     </Link>
     
     </>
