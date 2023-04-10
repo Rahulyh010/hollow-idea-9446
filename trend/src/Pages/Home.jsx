@@ -19,7 +19,7 @@ const [int,setInt]=useState(0)
 
    
 
-console.log(int)
+// console.log(int)
 
   return (
     <div id="HomeMain" >

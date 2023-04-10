@@ -3,15 +3,16 @@ import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 // import AdminProductCard from './AdminProductCard'
 import AdminProductsList from './AdminProductsList'
+import { IoMdAddCircleOutline } from 'react-icons/io';
 
 const AllProducts = () => {
   const navigate = useNavigate()
   return (
     <div>
       <PageDiv style={{ display: "flex", width: "90%" }}>
-        <div><h2 style={{ textAlign: "left", marginLeft: "4rem" }}>All Products</h2></div>
+        <div><h2 style={{ textAlign: "left", marginLeft: "4rem",fontSize:"25px" }}>All Products</h2></div>
         <div>
-          <button onClick={()=>navigate("/AddProducts")}>Add New Product</button>
+          <button onClick={()=>navigate("/AddProducts")}><IoMdAddCircleOutline/>Add Product</button>
         </div>
       </PageDiv>
 
@@ -54,6 +55,9 @@ const PageDiv = styled.div`
     color: white;
     background-color: #1d9969;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
 
   }
   & button:hover {

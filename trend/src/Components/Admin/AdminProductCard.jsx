@@ -13,12 +13,12 @@ const AdminProductCard = ({ image, description, brand, price, gender, id }) => {
         <tr >
           <td style={{ width: "2%", height: "2rem",background:"grey" }}><p style={{color:"white"}}>{id}</p></td>
           <td style={{ width: "8%", margin: "auto" }} ><img style={{ width: "30%", marginLeft: "-15rem", margin: "auto" }} src={image} alt="" /></td>
-          <td style={{ width: "20%", height: "2rem" }}><p style={{ width: "13rem", margin: "auto",height:"1rem", overflow:"hidden",textOverflow:"inherit" }}>{description}</p></td>
+          <td style={{ width: "20%", height: "2rem" }}><p style={{ width: "13rem", margin: "auto",height:"1.2rem", overflow:"hidden",textOverflow:"inherit" }}>{description}</p></td>
           <td style={{ width: "7%", height: "2rem" }}><p>{price}</p></td>
           <td style={{ width: "7%", height: "2rem" }}><p>{brand}</p></td>
           <td style={{ width: "7%", height: "2rem" }}><p>{gender}</p></td>
-          <td style={{ width: "5%", height: "2rem" }}><img style={{width:"25%"}} src="https://cdn-icons-png.flaticon.com/512/9807/9807446.png"/></td>
-          <td style={{ width: "5%", height: "2rem" }}><img style={{width:"25%"}} src="https://cdn-icons-png.flaticon.com/512/6711/6711573.png"/></td>
+          <td style={{ width: "5%", height: "2rem" }}><img style={{width:"25%"}} src="https://cdn-icons-png.flaticon.com/512/9807/9807446.png" alt=""/></td>
+          <td style={{ width: "5%", height: "2rem" }}><img style={{width:"25%"}} src="https://cdn-icons-png.flaticon.com/512/6711/6711573.png" alt=""/></td>
         </tr>
       </TableRow>
 

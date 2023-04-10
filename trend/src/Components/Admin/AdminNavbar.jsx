@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import {  useToast } from '@chakra-ui/react'
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { store } from '../../Redux/store';
 import { AiOutlinePoweroff } from 'react-icons/ai';
 import { LogoutProcess } from '../../Redux/AdminAuthReducer/action';
-import { toast, ToastContainer } from 'react-toastify';
+
 
 
 
@@ -19,7 +19,14 @@ const AdminNavbar = () => {
   // console.log(store.adminauth.isAuth))
   // console.log(logout)
   const LogoutToast = () => {
-    toast("Login Successfull");
+    toast({
+      title:"Logged Out",
+      description:"Successfully Logged Out",
+      Duration:"5000",
+      isClosable:"true",
+      status:"success",
+      position:"top"
+    })
     
   }
   const handleLogout = () => {
@@ -27,27 +34,18 @@ const AdminNavbar = () => {
    
     dispatch(LogoutProcess())
     LogoutToast()
-    navigate("/")
+    navigate("/adminLogin")
     
 
     
   }
+
+  const toast = useToast()
   return (
     
 
     <AdminNav>
-      <ToastContainer
-                position="top-center"
-                autoClose={1000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover={false}
-                theme="dark"
-            />
+      
       <div><h3 style={{ marginRight: "45rem", marginLeft: "2rem" }}>Admin Panel</h3></div>
       <Logout onClick={handleLogout}><AiOutlinePoweroff /> Logout</Logout>
 

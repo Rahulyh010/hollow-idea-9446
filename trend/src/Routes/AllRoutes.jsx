@@ -18,6 +18,9 @@ import Checkout from "../Pages/Checkout";
 import Search from "../Components/Search";
 import { Navbar } from "../Components/Navbar";
 
+import AdminDashboard from '../Components/Admin/AdminDashboard'
+
+
 export const AllRoutes = () => {
   return (
     <div>
