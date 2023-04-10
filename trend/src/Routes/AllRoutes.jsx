@@ -15,6 +15,8 @@ import ProductPage from "../Pages/ProductPage";
 import CartPage from "../Pages/CartPage";
 import Not_Found from "../Pages/Not_Found";
 import Checkout from "../Pages/Checkout";
+import Search from "../Components/Search";
+import { Navbar } from "../Components/Navbar";
 
 export const AllRoutes = () => {
   return (
@@ -35,6 +37,7 @@ export const AllRoutes = () => {
         <Route path="*" element={<Not_Found />} />
 
         <Route path="/checkout" element={<Checkout />}></Route>
+        <Route path="/navbar" element={<Navbar/>}></Route>
       </Routes>
     </div>
   );
