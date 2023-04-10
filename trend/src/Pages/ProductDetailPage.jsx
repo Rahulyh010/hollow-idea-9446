@@ -34,7 +34,11 @@ import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { MdLocalShipping } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+<<<<<<< HEAD
+import { Navbar } from '../Components/Navbar';
+=======
 import { useNavigate } from 'react-router-dom';
+>>>>>>> a28e32d23caea9208b207d7613edfbab3e7a9515
 
 export default function ProductDetailPage(){
   const {id}=useParams();
@@ -65,7 +69,9 @@ export default function ProductDetailPage(){
     }
   }
   return (
-    <Container maxW={'7xl'}>
+    <>
+    
+    <Container maxW={'7xl'} mt={"50px"}>
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
@@ -247,5 +253,6 @@ export default function ProductDetailPage(){
         </Stack>
       </SimpleGrid>
     </Container>
+    </>
   );
 }
