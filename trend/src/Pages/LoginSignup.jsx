@@ -9,13 +9,11 @@ import {
 import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-// import { login } from '../Components/Navbar'
 import {
   postNewUserLoginDetails,
   getUserLoginDetails,
   updateUserAuthStatus,
 } from "../Redux/AuthReducer/action";
-// import { userExist } from '../Redux/authentication/reducer'
 
 export const initialState = {
   firstName: "",
@@ -48,9 +46,7 @@ export function LoginSignup() {
   const navigate = useNavigate();
   const [showMatchStatus, setShowMatchStatus] = useState(false);
   const [matchStatus, setMatchStatus] = useState("passwords dont match");
-  // const location = useLocation();
 
-  // console.log(location)
 
   const dispatch = useDispatch();
   const reduxStore = useSelector((store) => store.users);
@@ -62,7 +58,6 @@ export function LoginSignup() {
   //------------------------FUNCTIONS----------------------------------------------------------
   const getInput = (e) => {
     let name = e.target.name;
-    // console.log(e.target.name)
 
     if (name === "existingEmail" || name === "existingPassword") {
       setExistingUserData(
@@ -85,7 +80,7 @@ export function LoginSignup() {
           setMatchStatus("passwords dont match");
           setColor("red");
         }
-        // console.log(userData,"outside")
+        
       }
       if (e.target.name === "otp") {
         setShowMatchStatus(false);
@@ -99,22 +94,17 @@ export function LoginSignup() {
           setColor("red");
         }
         if (e.target.value.length === 0) {
-          // console.log("len is 0", e.target.value)
+          
           setVisible(false);
         }
       }
     }
   };
 
-  // console.log(showForm1,"1",showForm2,"2",showForm3,"3");
-  // console.log(existingUserData)
-  // console.log(userData,"user data object")
-  // console.log(reduxStore,"from redux store")
-  // console.log(userData.mobile, "mobile number")
+ 
 
   const toggleForms = async (e) => {
-    // console.log(e.target.innerText)
-    // console.log("clicking of proceed button");
+   
     if (e.target.innerText === "Proceed") {
       await dispatch(getUserLoginDetails(userData.mobile));
       userExist = JSON.parse(localStorage.getItem("currentUser"));
@@ -125,7 +115,6 @@ export function LoginSignup() {
         userExist.isAuth = true;
         localStorage.setItem("currentUser", JSON.stringify(userExist));
         setShowForm3(true);
-        // setShowForm1(prev => !prev);
         setShowForm1(false);
         setShowForm2(false);
         console.log("yo");
@@ -138,23 +127,11 @@ export function LoginSignup() {
     } else if (e.target.innerText === "Cancel") {
       setUserData(initialState);
     }
-    // else{
-
-    //   setVisible(false)
-    //   setShowForm1((prev) => !prev)
-    //   setShowForm2((prev) => !prev)
-    //   setShowForm3(false)
-    // }
+   
   };
-  // console.log(showForm3)
   const addUser = async () => {
     console.log(userData, "from addUser function in login signup");
     let res = await dispatch(postNewUserLoginDetails(userData));
-    // login();
-    // currentUser = JSON.parse(localStorage.getItem("currentUser"))
-    //  let res = await dispatch(getUserLoginDetails(userData.mobile));
-    //  localStorage.setItem('currentUser', JSON.stringify(res.))
-    console.log(res, "response from login signup");
 
     navigate("/");
   };
@@ -173,7 +150,7 @@ export function LoginSignup() {
   };
   //------------------------------------RETURN---------------------------------------------------------
   return (
-    // <ChakraProvider>
+    // <>
 
     <Box
       // id={styles.mainContainer}
@@ -204,7 +181,6 @@ export function LoginSignup() {
           <>
             <Box
               align="left"
-              // border="1px solid blue"
               margin="auto"
               w="50%"
               mt="20px"
@@ -241,65 +217,46 @@ export function LoginSignup() {
             <FormControl width="50%" margin="auto" mt="30px">
               <FormLabel>Start by entering your First Name</FormLabel>
               <Input
-                // w="200px"
-                // className={styles.form2Input}
-                // id="firstName"
                 name="firstName"
                 placeholder="First Name"
                 border="2px solid gray"
                 type="text"
-                //   value={userData.firstName}
                 onChange={getInput}
               />
               <Input
-                // w="200px"
-                // className={styles.form2Input}
-                // id="lastName"
                 name="lastName"
                 placeholder="Last Name"
                 border="2px solid gray"
                 type="text"
                 value={userData.lastName}
                 onChange={getInput}
-                //   ref={lastNameRef}
                 isDisabled={userData.firstName.length === 0}
               />
               <Input
-                // w="200px"
-                // className={styles.form2Input}
-                // id="email"
                 name="email"
                 placeholder="Enter Email"
                 border="2px solid gray"
                 type="text"
                 value={userData.email}
                 onChange={getInput}
-                //   ref={emailRef}
                 isDisabled={userData.lastName.length === 0}
               />
               <Input
-                // w="200px"
-                // className={styles.form2Input}
                 name="password"
                 placeholder="Password"
                 border="2px solid gray"
                 type="password"
                 value={userData.password}
                 onChange={getInput}
-                //   ref={passwordRef}
                 isDisabled={userData.email.length === 0}
               />
               <Input
-                // w="200px"
-                // className={styles.form2Input}
-                // id="confirmPassword"
                 name="confirmPassword"
                 placeholder="Confirm Password"
                 border="2px solid gray"
                 type="password"
                 value={userData.confirmPassword}
                 onChange={getInput}
-                // ref={confirmPasswordRef}
                 isDisabled={userData.password.length === 0}
               />
               {showMatchStatus && (
@@ -311,8 +268,6 @@ export function LoginSignup() {
                 Provide OTP sent on your mobile number +91 {userData.mobile}
               </FormLabel>
               <Input
-                // w="200px"
-                // className={styles.form2Input}
                 name="otp"
                 placeholder="Enter OTP"
                 border="2px solid gray"
@@ -321,7 +276,6 @@ export function LoginSignup() {
                 onChange={getInput}
                 ref={otpRef}
                 isDisabled
-                // ={userData.confirmPassword.length === 0}
               />
               {visible && (
                 <Text fontSize="15px" color={color} align="left">
@@ -369,8 +323,6 @@ export function LoginSignup() {
 
             <Button
               mt="30px"
-              // isDisabled={userData.mobile.length === 0}
-              // ref={btnRef}
               onClick={checkCredentials}
               bg="orange"
             >
@@ -380,7 +332,7 @@ export function LoginSignup() {
         )}
       </Box>
     </Box>
-    // </ChakraProvider>
+  
 
   );
 }
