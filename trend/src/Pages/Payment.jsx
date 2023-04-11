@@ -25,6 +25,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios"
 
 let obj = {
   name: "",
@@ -199,7 +200,7 @@ const Payment = () => {
                   <Button
                     colorScheme="blue"
                     mr={3}
-                    onClick={() => {
+                    onClick={async () => {
                       if (
                         paymentValid.name !== "" &&
                         paymentValid.cvv !== "" &&
@@ -219,6 +220,8 @@ const Payment = () => {
                           isClosable: true,
                         });
                       }
+
+                     await axios.delete(`https://json-servermock3-pearl.vercel.app/cart`);
                     }}
                   >
                     {`pay $${totalPrice}`}
