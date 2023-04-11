@@ -34,11 +34,7 @@ import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { MdLocalShipping } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-<<<<<<< HEAD
-import { Navbar } from '../Components/Navbar';
-=======
 import { useNavigate } from 'react-router-dom';
->>>>>>> a28e32d23caea9208b207d7613edfbab3e7a9515
 
 export default function ProductDetailPage(){
   const {id}=useParams();
