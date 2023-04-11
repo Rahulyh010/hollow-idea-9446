@@ -63,13 +63,13 @@ const Payment = () => {
     getCartProducts();
   }, []);
 
-  let totalPrice = 0;
+  let totalPrice = localStorage.getItem("price");
 
-    data.map((el) => {
-      return (totalPrice += el.mrpRange.min);
-    });
+//     data.map((el) => {
+//       return (totalPrice += el.mrpRange.min);
+//     });
 
-  console.log(totalPrice);
+//   console.log(totalPrice);
 
   return (
     <Box w={{ base: "full", lg: "75%" }} m={"auto"} mt={"5%"} borderRadius={10}>

@@ -25,7 +25,7 @@ import Not_Found from "../Pages/Not_Found";
 // import Checkout from "../Pages/Checkout";
 import { CartPage } from "../Pages/CartPage";
 import Checkout1 from "../Pages/checkout1";
-import Payment from "../Pages/payment";
+import Payment from "../Pages/Payment";
 
 //import { Home } from '../Pages/Home'
 export const AllRoutes = () => {
