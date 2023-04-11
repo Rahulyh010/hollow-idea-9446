@@ -13,6 +13,8 @@ import Logo from "../Images/Logo.png"
 import { Link } from 'react-router-dom'
 import { updateUserAuthStatus } from '../Redux/AuthReducer/action';
 import "../Styles/Navbar.css"
+import { useEffect } from 'react';
+import Search from './Search';
 
 export const Navbar = () => {
   const [showLogin, setShowLogin] = useState(true);
@@ -31,7 +33,7 @@ export const Navbar = () => {
         setShowMenu(true);
       }
     }
-  },[])
+  },[showMenu])
 
  
  const logout=()=>{
@@ -87,7 +89,7 @@ Admin
 
       <div className='nav1' > 
        
-      <Link href="/">
+      <Link to="/">
       <img className='nav-img' width="60%" src={Logo} alt="ajio" />
       </Link> 
 
@@ -97,20 +99,34 @@ Admin
   <div>
     <Link to="/productpage" >Men</Link>
   </div>
+  <Link to={"/productpage"}>
+
   <div>
     women
   </div>
+  </Link>
+
+  <Link to={"/productpage"}>
   <div>
     Kids
   </div>
+
+  </Link>
+
+  <Link to={"/productpage"}>
   <div>
     Indie
   </div>
+
+  </Link>
+  <Link to={"/productpage"}>
+
   <div>
     Homes and Kitchen
   </div>
+  </Link>
   <div>
-    <input type="text"  placeholder='Search Trend' />
+    <Search/>
   </div>
   <div>
     <img src="https://cdn-icons.flaticon.com/svg/3916/3916585.svg?token=exp=1677352364~hmac=a39d2926056df42d24de9d96aeb5662e" alt="" />
