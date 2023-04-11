@@ -46,7 +46,36 @@ const Payment = () => {
     const { name, value } = e.target;
     setPaymentValid({ ...paymentValid, [name]: value });
   };
-  console.log(paymentValid);
+  // console.log(paymentValid);
+
+const handlePay = async()=>{
+try {
+  if (
+    paymentValid.name !== "" &&
+    paymentValid.cvv !== "" &&
+    paymentValid.Expiry !== "" &&
+    paymentValid.cardN !== ""
+  ) {
+    toast({
+      title: "payment successfull",
+      status: "success",
+      isClosable: true,
+    });
+    navigate("/");
+  } else {
+    toast({
+      title: "Please filled All  Details",
+      status: "error",
+      isClosable: true,
+    });
+  }
+let data = await axios.get(`https://json-servermock3-pearl.vercel.app/cart`);
+ await axios.delete(`https://json-servermock3-pearl.vercel.app/cart`);
+} catch (error) {
+  console.log(error);
+}
+}
+
   const navigate = useNavigate();
 
   let address = JSON.parse(localStorage.getItem("address"));
@@ -200,29 +229,7 @@ const Payment = () => {
                   <Button
                     colorScheme="blue"
                     mr={3}
-                    onClick={async () => {
-                      if (
-                        paymentValid.name !== "" &&
-                        paymentValid.cvv !== "" &&
-                        paymentValid.Expiry !== "" &&
-                        paymentValid.cardN !== ""
-                      ) {
-                        toast({
-                          title: "payment successfull",
-                          status: "success",
-                          isClosable: true,
-                        });
-                        navigate("/");
-                      } else {
-                        toast({
-                          title: "Please filled All  Details",
-                          status: "error",
-                          isClosable: true,
-                        });
-                      }
-
-                     await axios.delete(`https://json-servermock3-pearl.vercel.app/cart`);
-                    }}
+                    onClick={handlePay}
                   >
                     {`pay $${totalPrice}`}
                   </Button>
