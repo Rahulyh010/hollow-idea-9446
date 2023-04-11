@@ -1,9 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import styled from 'styled-components'
 
 const SideBarProduct = () => {
+  const products=useSelector((store)=>store.product.products)
+console.log(products);
    const handleChange =(e)=>{
-          console.log(e.target.value)
+          
    }
   return (
     <SidrBarDiv>

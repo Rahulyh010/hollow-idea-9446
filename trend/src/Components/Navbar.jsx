@@ -16,18 +16,22 @@ import "../Styles/Navbar.css"
 
 export const Navbar = () => {
   const [showLogin, setShowLogin] = useState(true);
-  const [showMenu,setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  
 
   let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-  if(currentUser && currentUser.isAuth === true){
-    if(showLogin===true){
-     setShowLogin(false)
+  useEffect(()=>{
+    
+    if (currentUser && currentUser.isAuth === true) {
+      if (showLogin === true) {
+        setShowLogin(false);
+      }
+      if (showMenu === false) {
+        setShowMenu(true);
+      }
     }
-    if(showMenu===false){
-       setShowMenu(true);
-    }
- }
+  },[])
 
  
  const logout=()=>{
