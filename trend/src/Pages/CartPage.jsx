@@ -12,6 +12,15 @@ export const CartPage = () => {
 
   console.log(products);
 
+  let totalPrice = 0;
+
+    data.map((el) => {
+      return (totalPrice += el.mrpRange.min*page);
+    });
+
+    localStorage.setItem("price", JSON.stringify(totalPrice));
+  console.log(totalPrice);
+
   const getData = async () => {
     try {
       let r = await fetch("https://json-servermock3-pearl.vercel.app/cart");
@@ -55,7 +64,7 @@ export const CartPage = () => {
           )
         })
       }
-
+<h1 style={{padding:"4%",background:"green",color:"white",width:"40%",height:"10%"}} >Total Price:{totalPrice}</h1>
     </div>
     <Link to="/checkout">
     <Button bg={"blue.500"} color={"white"}>CHECKOUT</Button>
