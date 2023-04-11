@@ -48,7 +48,7 @@ export const CartPage = () => {
       }}
     >
       {
-        data?.map((el)=>{
+        data.map((el)=>{
           
           return(
             <div key={el.id}>
@@ -57,9 +57,9 @@ export const CartPage = () => {
             <p>Brand  : {el.brand}</p>
             <p>Discount Range : <span>min : {el.discountRange["min"] }</span> </p>
             <h1 style={{fontWeight:"bold",fontSize:"18px"}}>Price : <span style={{color:"gray"}}>{el.mrpRange.min}</span></h1>
-            <Button onClick={()=>{setPage(page+1)}} bg={"red"} padding={"0px 0px"}>+</Button>
+            <Button onClick={()=>{setPage(page-1)}} bg={"red"} isDisabled={page===0}>-</Button>
             <span>{page}</span>
-            <Button onClick={()=>{setPage(page-1)}} isDisabled={page===0} bg={"red"}>-</Button>
+            <Button onClick={()=>{setPage(page+1)}}  bg={"red"}>+</Button>
             </div>
           )
         })
@@ -67,7 +67,7 @@ export const CartPage = () => {
 <h1 style={{padding:"4%",background:"green",color:"white",width:"40%",height:"10%"}} >Total Price:{totalPrice}</h1>
     </div>
     <Link to="/checkout">
-    <Button bg={"blue.500"} color={"white"}>CHECKOUT</Button>
+    <Button bg={"blue.500"} color={"white"} marginTop={"30px"}>CHECKOUT</Button>
     </Link>
     
     </>
