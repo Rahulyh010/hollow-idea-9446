@@ -13,7 +13,7 @@ import Logo from "../Images/Logo.png"
 import { Link } from 'react-router-dom'
 import { updateUserAuthStatus } from '../Redux/AuthReducer/action';
 import "../Styles/Navbar.css"
-
+import {useEffect} from 'react'
 export const Navbar = () => {
   const [showLogin, setShowLogin] = useState(true);
   const [showMenu, setShowMenu] = useState(false);
