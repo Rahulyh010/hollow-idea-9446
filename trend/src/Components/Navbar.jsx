@@ -18,12 +18,12 @@ import Search from "./Search";
 export const Navbar = () => {
   const [showLogin, setShowLogin] = useState(true);
   const [showMenu, setShowMenu] = useState(false);
-  const [change, setChange] = useState(false);
+  
 
   let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   useEffect(()=>{
-    setChange((prev)=>!prev);
+    
     if (currentUser && currentUser.isAuth === true) {
       if (showLogin === true) {
         setShowLogin(false);
@@ -32,7 +32,7 @@ export const Navbar = () => {
         setShowMenu(true);
       }
     }
-  },[change])
+  },[])
 
   const logout = () => {
     console.log(currentUser.id, "currentUser.id");
@@ -65,14 +65,6 @@ export const Navbar = () => {
           </Link>
         </div>
       </div>
-<<<<<<< HEAD
-      <div className="nav-main">
-         <div className="nav1">
-          <Link href="/">
-            <img className="nav-img" width="60%" src={Logo} alt="ajio" />
-          </Link>
-        </div>
-=======
       <div id="nav02">
       {showLogin && 
         <Link to={"/signin"}>
@@ -96,7 +88,6 @@ Admin
 </div>
 </Link>
 
->>>>>>> a28e32d23caea9208b207d7613edfbab3e7a9515
 
         <div className="nav2">
           <div>
