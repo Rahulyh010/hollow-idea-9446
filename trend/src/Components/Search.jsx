@@ -1,7 +1,7 @@
 import { Box, Heading, Input, Stack, Text, VStack } from "@chakra-ui/react";
 import React, { useState } from "react";
 
-import "./Search.module.css";
+import "./search.module.css";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
