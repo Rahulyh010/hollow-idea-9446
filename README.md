@@ -1,4 +1,4 @@
-# TREND [Diployed Link](https://n-eight-kappa.vercel.app/)
+# TREND [Diployed Link](https://trends-ecommerce-webapp.netlify.app/)
 
 
 <h3>Trend is an E-Commerce website that allows users to shop online stuffs like clothing, accessories and many more.</h3>
