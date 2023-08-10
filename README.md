@@ -6,10 +6,11 @@
 <h4>This is a collaborative project & team members are:-</h4>
 <ul>
   <li>Rahul (Team lead)</li>
+  <li>Md Faizan</li>
    <li>Avinash Kalmegh</li>
    <li>Vivek Agarwal</li>
    <li>Bhaggyesh Kharode</li>
-   <li>M D Faizan</li>
+   
 </ul>
 
 
